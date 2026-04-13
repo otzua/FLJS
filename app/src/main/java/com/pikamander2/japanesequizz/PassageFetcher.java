@@ -59,34 +59,27 @@ public class PassageFetcher {
             "https://www3.nhk.or.jp/news/easy/%s/%s.html";
 
     // Aozora Bunko — public-domain works, stable card URLs
-    // We pick from a curated list of short/medium works that are good for learners.
-    // Format: { card_id, work_title, author }
-    private static final String[][] AOZORA_WORKS = {
-        // 走れメロス (Run, Melos!) — Osamu Dazai, 1940, public domain
-        {"1567", "000_files/files/kareinaru_ichizoku.html",
-                "走れメロス", "太宰治 (Dazai Osamu)"},
-        // 坊っちゃん (Botchan) — Natsume Soseki, 1906, public domain
-        {"nihongo", "files/hashire_merosu.html",
-                "羅生門", "芥川龍之介 (Akutagawa Ryunosuke)"},
-    };
-
-    // Fallback Aozora direct URLs — fully public domain, plain HTML
     private static final String[][] AOZORA_DIRECT = {
         {
-            "https://www.aozora.gr.jp/cards/000035/files/275_ruby_670.html",
-            "走れメロス", "太宰治 (Dazai Osamu, 1940)",
+            "https://www.aozora.gr.jp/cards/000035/files/1567_14913.html",
+            "走れメロス (Run, Melos!)", "太宰治 (Dazai Osamu)",
             "ADVANCED"
         },
         {
             "https://www.aozora.gr.jp/cards/000879/files/127_15260.html",
-            "羅生門", "芥川龍之介 (Akutagawa Ryunosuke, 1915)",
+            "羅生門 (Rashomon)", "芥川龍之介 (Akutagawa Ryunosuke)",
             "ADVANCED"
         },
         {
             "https://www.aozora.gr.jp/cards/000148/files/789_14547.html",
-            "吾輩は猫である（抄）", "夏目漱石 (Natsume Soseki, 1905)",
+            "吾輩は猫である (I Am a Cat)", "夏目漱石 (Natsume Soseki)",
             "ADVANCED"
         },
+        {
+            "https://www.aozora.gr.jp/cards/000121/files/628_14895.html",
+            "ごん狐 (Gon, the Little Fox)", "新美南吉 (Niimi Nankichi)",
+            "INTERMEDIATE"
+        }
     };
 
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
@@ -111,24 +104,26 @@ public class PassageFetcher {
         executor.execute(() -> {
             List<ReadingPassage> result = new ArrayList<>();
 
-            // Primary source: NHK Web Easy (works for KANJI, MIXED, and HIRAGANA
-            // since NHK articles include furigana ruby text we can strip)
+            // NHK Web Easy is currently requiring JWT tokens for their JSON API.
+            // We'll skip it for now and rely on Aozora Bunko which is more stable.
+            
             try {
-                List<ReadingPassage> nhkPassages = fetchNhkPassages(script);
-                result.addAll(nhkPassages);
-            } catch (Exception e) {
-                Log.w(TAG, "NHK fetch failed: " + e.getMessage());
-            }
-
-            // Secondary source: Aozora Bunko (for KANJI / ADVANCED)
-            if (script == ReadingPassage.Script.KANJI
-                    || script == ReadingPassage.Script.MIXED) {
-                try {
-                    ReadingPassage aozora = fetchAozoraPassage();
-                    if (aozora != null) result.add(aozora);
-                } catch (Exception e) {
-                    Log.w(TAG, "Aozora fetch failed: " + e.getMessage());
+                // Fetch multiple unique works from Aozora
+                List<Integer> indices = new ArrayList<>();
+                for (int i = 0; i < AOZORA_DIRECT.length; i++) indices.add(i);
+                Collections.shuffle(indices);
+                
+                int count = 0;
+                for (int idx : indices) {
+                    if (count >= 3) break;
+                    ReadingPassage aozora = fetchAozoraPassage(idx);
+                    if (aozora != null) {
+                        result.add(aozora);
+                        count++;
+                    }
                 }
+            } catch (Exception e) {
+                Log.w(TAG, "Aozora fetch failed: " + e.getMessage());
             }
 
             if (result.isEmpty()) {
@@ -264,15 +259,15 @@ public class PassageFetcher {
 
     // ── Aozora Bunko ──────────────────────────────────────────────────────────
 
-    private ReadingPassage fetchAozoraPassage() throws IOException {
-        // Pick a random Aozora work
-        String[] work = AOZORA_DIRECT[random.nextInt(AOZORA_DIRECT.length)];
+    private ReadingPassage fetchAozoraPassage(int index) throws IOException {
+        String[] work = AOZORA_DIRECT[index];
         String url    = work[0];
         String title  = work[1];
         String author = work[2];
         boolean isAdvanced = "ADVANCED".equals(work[3]);
 
-        String html = get(url);
+        // Aozora Bunko uses Shift_JIS encoding
+        String html = get(url, "Shift_JIS");
 
         // Aozora body is inside <div class="main_text"> or <div id="honbun">
         String body = extractBetween(html, "class=\"main_text\"", "</div>");
@@ -328,8 +323,11 @@ public class PassageFetcher {
     private String buildJapaneseText(String html) {
         // Remove <rt>...</rt> blocks (the furigana)
         String s = html.replaceAll("(?i)<rt[^>]*>.*?</rt>", "");
+        // Remove <rp> blocks (parentheses for non-ruby browsers)
+        s = s.replaceAll("(?i)<rp[^>]*>.*?</rp>", "");
         // Remove ruby wrapper tags (keep inner kanji text)
         s = s.replaceAll("(?i)</?ruby[^>]*>", "");
+        s = s.replaceAll("(?i)</?rb[^>]*>", "");
         // Convert <br> variants to newlines
         s = s.replaceAll("(?i)<br\\s*/?>", "\n");
         // Replace common HTML entities
@@ -349,22 +347,26 @@ public class PassageFetcher {
      * e.g. <ruby>東京<rt>とうきょう</rt></ruby>  →  とうきょう
      */
     private String buildFuriganaText(String html) {
-        // Replace <ruby>漢字<rt>ふりがな</rt></ruby> with ふりがな
+        // Remove <rp> blocks first
+        String s = html.replaceAll("(?i)<rp[^>]*>.*?</rp>", "");
+        
+        // Replace <ruby>...<rt>ふりがな</rt>...</ruby> with ふりがな
         Pattern rubyPattern = Pattern.compile(
-                "(?i)<ruby[^>]*>(.*?)<rt[^>]*>(.*?)</rt>\\s*</ruby>",
+                "(?i)<ruby[^>]*>.*?<rt[^>]*>(.*?)</rt>.*?</ruby>",
                 Pattern.DOTALL);
         StringBuffer sb = new StringBuffer();
-        Matcher m = rubyPattern.matcher(html);
+        Matcher m = rubyPattern.matcher(s);
         while (m.find()) {
-            String furigana = m.group(2);
+            String furigana = m.group(1);
             // Sanitise the furigana replacement
             furigana = stripTags(furigana).trim();
             m.appendReplacement(sb, Matcher.quoteReplacement(furigana));
         }
         m.appendTail(sb);
-        String s = sb.toString();
-        // Remove any remaining ruby/rt tags
+        s = sb.toString();
+        // Remove any remaining ruby/rt/rb tags
         s = s.replaceAll("(?i)</?ruby[^>]*>", "");
+        s = s.replaceAll("(?i)</?rb[^>]*>", "");
         s = s.replaceAll("(?i)<rt[^>]*>.*?</rt>", "");
         s = s.replaceAll("(?i)<br\\s*/?>", "\n");
         s = unescapeHtml(s);
@@ -441,13 +443,13 @@ public class PassageFetcher {
     // ── HTTP ─────────────────────────────────────────────────────────────────
 
     /** Synchronous GET — must be called off the main thread. */
-    private String get(String url) throws IOException {
+    private String get(String url, String charset) throws IOException {
         Request request = new Request.Builder()
                 .url(url)
                 .header("User-Agent",
-                        "Mozilla/5.0 (Linux; Android 10) "
+                        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
                         + "AppleWebKit/537.36 (KHTML, like Gecko) "
-                        + "Chrome/120.0 Mobile Safari/537.36")
+                        + "Chrome/120.0.0.0 Safari/537.36")
                 .header("Accept-Language", "ja,en;q=0.9")
                 .build();
 
@@ -456,8 +458,17 @@ public class PassageFetcher {
                 throw new IOException("HTTP " + response.code() + " for " + url);
             }
             if (response.body() == null) throw new IOException("Empty body for " + url);
-            return response.body().string();
+            
+            if (charset != null) {
+                return new String(response.body().bytes(), charset);
+            } else {
+                return response.body().string();
+            }
         }
+    }
+
+    private String get(String url) throws IOException {
+        return get(url, null);
     }
 
     /** Cancel any pending fetches (call from onDestroy). */
