@@ -36,6 +36,12 @@ public class MainActivity extends AppCompatActivity {
         textViewBestScore    = findViewById(R.id.textViewBestScore);
         textViewTotalAnswered = findViewById(R.id.textViewTotalAnswered);
 
+        findViewById(R.id.textCredits).setOnClickListener(v -> {
+            android.net.Uri uri = android.net.Uri.parse("https://github.com/otzua");
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            startActivity(intent);
+        });
+
         setupListeners();
     }
 

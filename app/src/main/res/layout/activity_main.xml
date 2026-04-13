@@ -670,6 +670,21 @@
 
             </com.google.android.material.card.MaterialCardView>
 
+            <!-- Credits -->
+            <TextView
+                android:id="@+id/textCredits"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Developed by @otzua"
+                android:textColor="@color/colorPrimary"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackground"
+                android:padding="4dp" />
+
             <!-- Version -->
             <TextView
                 android:layout_width="wrap_content"
