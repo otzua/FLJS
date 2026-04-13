@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">FLJS</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="title_activity_display_message">Quiz</string>
+    <string name="title_activity_settings">Settings</string>
+    <string name="title_activity_quiz_summary">Results</string>
+    <string name="placeholderDash">-</string>
+    <string name="buttonHiragana">Hiragana</string>
+    <string name="buttonKatakana">Katakana</string>
+    <string name="buttonKanji">Kanji</string>
+    <string name="buttonMixture">Mixed</string>
+    <string name="VersionNumber">Version 2.1</string>
+    <string name="buttonFlip">Flip Direction</string>
+    <string name="Choices">Choices</string>
+    <string name="Count">Count</string>
+
+    <!-- Strings related to Settings -->
+    <string name="pref_header_general">General</string>
+    <string name="pref_title_easy_full">Include Youon</string>
+    <string name="pref_description_easy_full">When activated, include composed characters such as kya, sho, nyu</string>
+
+    <string name="pref_title_display_name">Display name</string>
+    <string name="pref_default_display_name">John Smith</string>
+
+    <string name="pref_choices_title">Answer Choices</string>
+    <string-array name="pref_choices_list_entries">
+        <item>2 choices</item>
+        <item>4 choices</item>
+        <item>6 choices</item>
+        <item>8 choices</item>
+    </string-array>
+    <string-array name="pref_choices_list_values">
+        <item>2</item>
+        <item>4</item>
+        <item>6</item>
+        <item>8</item>
+    </string-array>
+
+    <!-- Online fetch -->
+    <string name="fetch_card_title">Get Fresh Passages Online</string>
+    <string name="fetch_card_subtitle">Pulls real articles from NHK Web Easy and Aozora Bunko</string>
+    <string name="btn_fetch_online">↺ Fetch Now</string>
+    <string name="btn_fetching">Loading…</string>
+    <string name="fetch_status_loading">Connecting to NHK Web Easy and Aozora Bunko…</string>
+    <string name="fetch_status_done">✓ Loaded %d new passages from the internet</string>
+    <string name="fetch_status_error">Could not connect — showing offline passages</string>
+    <string name="no_passages_filter">No passages match this filter.</string>
+    <string name="source_label">Source: %s</string>
+
+    <!-- Reading section -->
+    <string name="section_reading">Reading Practice</string>
+    <string name="reading_subtitle">Read and comprehend real passages</string>
+    <string name="reading_hiragana_desc">Hiragana-only passages</string>
+    <string name="reading_katakana_desc">Katakana-only passages</string>
+    <string name="reading_mixed_desc">Hiragana and Katakana</string>
+    <string name="reading_kanji_desc">Kanji with kana</string>
+    <string name="btn_show_romaji">Show Romaji</string>
+    <string name="btn_hide_romaji">Hide Romaji</string>
+    <string name="btn_show_english">Show Translation</string>
+    <string name="btn_hide_english">Hide Translation</string>
+    <string name="btn_next_passage">Next Passage →</string>
+
+    <string name="pref_count_title">Questions per Round</string>
+    <string-array name="pref_count_list_entries">
+        <item>Quick (10)</item>
+        <item>Short (20)</item>
+        <item>Normal (50)</item>
+        <item>Full (100)</item>
+    </string-array>
+    <string-array name="pref_count_list_values">
+        <item>10</item>
+        <item>20</item>
+        <item>50</item>
+        <item>100</item>
+    </string-array>
+
+</resources>
