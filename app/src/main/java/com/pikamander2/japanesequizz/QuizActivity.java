@@ -100,6 +100,20 @@ public class QuizActivity extends AppCompatActivity {
         gridViewQuestions.setExpanded(true);
 
         switchQuestion();
+
+        TextView btnChart = findViewById(R.id.btnViewChartInQuiz);
+        if (quizID == 1 || quizID == 2) {
+            btnChart.setVisibility(View.VISIBLE);
+            if (quizID == 2) {
+                btnChart.setBackgroundResource(R.drawable.button_pill_accent);
+            }
+            btnChart.setOnClickListener(v -> {
+                Intent chartIntent = new Intent(this, ChartActivity.class);
+                chartIntent.putExtra(ChartActivity.EXTRA_CHART_TYPE,
+                        quizID == 1 ? ChartActivity.TYPE_HIRAGANA : ChartActivity.TYPE_KATAKANA);
+                startActivity(chartIntent);
+            });
+        }
     }
 
     public View.OnClickListener answerOnClick = view -> guess(view);

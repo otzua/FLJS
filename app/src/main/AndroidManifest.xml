@@ -62,6 +62,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.pikamander2.japanesequizz.MainActivity" />
         </activity>
+        <activity
+            android:name="com.pikamander2.japanesequizz.ChartActivity"
+            android:label="Chart"
+            android:parentActivityName="com.pikamander2.japanesequizz.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.pikamander2.japanesequizz.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
