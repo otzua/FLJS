@@ -11,8 +11,8 @@ android {
         applicationId = "com.pikamander2.japanesequizz"
         minSdk = 24
         targetSdk = 36
-        versionCode = 21
-        versionName = "2.1"
+        versionCode = 23
+        versionName = "2.3"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -41,7 +41,6 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("androidx.preference:preference:1.2.1")
     implementation("androidx.cardview:cardview:1.0.0")
-    implementation("com.squareup.okhttp3:okhttp:4.12.0")
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
