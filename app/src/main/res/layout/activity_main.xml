@@ -1,9 +1,12 @@
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBackground"
+    android:fitsSystemWindows="true"
     tools:context="com.pikamander2.japanesequizz.MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -11,6 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
+        android:fitsSystemWindows="true"
         app:elevation="0dp">
 
         <androidx.appcompat.widget.Toolbar
@@ -22,10 +26,11 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true"
+        android:overScrollMode="ifContentScrolls"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
@@ -33,51 +38,63 @@
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:orientation="vertical"
-            android:padding="24dp">
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="32dp">
 
             <!-- Title Section -->
             <TextView
+                android:id="@+id/textTitleJapanese"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="24dp"
                 android:text="Japanese"
                 android:textColor="@color/colorOnBackground"
-                android:textSize="42sp"
+                android:textSize="38sp"
                 android:textStyle="bold"
+                android:letterSpacing="-0.02"
                 android:fontFamily="sans-serif-medium" />
 
             <TextView
+                android:id="@+id/textTitleCharacters"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Characters"
                 android:textColor="@color/colorPrimary"
-                android:textSize="42sp"
+                android:textSize="38sp"
                 android:textStyle="bold"
+                android:letterSpacing="-0.02"
                 android:fontFamily="sans-serif-medium" />
 
             <TextView
+                android:id="@+id/textSubtitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="6dp"
                 android:text="Quiz and Reading Practice"
                 android:textColor="@color/colorOnBackgroundSecondary"
-                android:textSize="16sp" />
+                android:textSize="15sp"
+                android:letterSpacing="0.01" />
 
             <!-- Stats Row -->
             <LinearLayout
+                android:id="@+id/layoutStats"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
+                android:layout_marginTop="24dp"
                 android:orientation="horizontal"
                 android:gravity="center">
 
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardHiraganaChart"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_marginEnd="8dp"
+                    android:layout_marginEnd="6dp"
+                    android:clickable="true"
+                    android:focusable="true"
                     app:cardBackgroundColor="@color/colorSurface"
-                    app:cardCornerRadius="16dp"
+                    app:cardCornerRadius="18dp"
                     app:cardElevation="0dp"
                     app:strokeColor="@color/colorCardStroke"
                     app:strokeWidth="1dp">
@@ -87,35 +104,40 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:orientation="vertical"
-                        android:padding="16dp">
+                        android:paddingTop="14dp"
+                        android:paddingBottom="14dp">
 
                         <TextView
-                            android:id="@+id/textViewBestScore"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="0"
+                            android:text="あ"
                             android:textColor="@color/colorPrimary"
-                            android:textSize="28sp"
+                            android:textSize="22sp"
                             android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Best Streak"
+                            android:layout_marginTop="2dp"
+                            android:text="Hiragana Chart"
                             android:textColor="@color/colorOnBackgroundSecondary"
-                            android:textSize="12sp" />
+                            android:textSize="10sp"
+                            android:letterSpacing="0.03" />
 
                     </LinearLayout>
 
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardKatakanaChart"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:layout_marginStart="8dp"
+                    android:layout_marginStart="6dp"
+                    android:clickable="true"
+                    android:focusable="true"
                     app:cardBackgroundColor="@color/colorSurface"
-                    app:cardCornerRadius="16dp"
+                    app:cardCornerRadius="18dp"
                     app:cardElevation="0dp"
                     app:strokeColor="@color/colorCardStroke"
                     app:strokeWidth="1dp">
@@ -125,23 +147,25 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:orientation="vertical"
-                        android:padding="16dp">
+                        android:paddingTop="14dp"
+                        android:paddingBottom="14dp">
 
                         <TextView
-                            android:id="@+id/textViewTotalAnswered"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="0"
+                            android:text="ア"
                             android:textColor="@color/colorAccent"
-                            android:textSize="28sp"
+                            android:textSize="22sp"
                             android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Total Practiced"
+                            android:layout_marginTop="2dp"
+                            android:text="Katakana Chart"
                             android:textColor="@color/colorOnBackgroundSecondary"
-                            android:textSize="12sp" />
+                            android:textSize="10sp"
+                            android:letterSpacing="0.03" />
 
                     </LinearLayout>
 
@@ -149,28 +173,74 @@
 
             </LinearLayout>
 
-            <!-- Quiz Mode Cards -->
+            <!-- Stats Overview -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Best Streak: "
+                    android:textColor="@color/colorOnBackgroundSecondary"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/textViewBestScore"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="16dp"
+                    android:layout_height="1dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Total: "
+                    android:textColor="@color/colorOnBackgroundSecondary"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/textViewTotalAnswered"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0"
+                    android:textColor="@color/colorAccent"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <!-- Quiz Section Header -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:layout_marginBottom="12dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginBottom="10dp"
                 android:text="Choose a Mode"
                 android:textColor="@color/colorOnBackground"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.01" />
 
             <!-- Hiragana Card -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cardHiragana"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
+                android:layout_marginBottom="10dp"
                 android:clickable="true"
                 android:focusable="true"
                 app:cardBackgroundColor="@color/colorSurface"
                 app:cardCornerRadius="20dp"
-                app:cardElevation="2dp"
+                app:cardElevation="0dp"
                 app:rippleColor="@color/colorPrimaryLight"
                 app:strokeColor="@color/colorCardStroke"
                 app:strokeWidth="1dp">
@@ -180,21 +250,21 @@
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:padding="20dp">
+                    android:padding="18dp">
 
                     <TextView
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
+                        android:layout_width="52dp"
+                        android:layout_height="52dp"
                         android:background="@drawable/circle_primary"
                         android:gravity="center"
                         android:text="あ"
                         android:textColor="@color/colorOnPrimary"
-                        android:textSize="28sp" />
+                        android:textSize="26sp" />
 
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
+                        android:layout_marginStart="14dp"
                         android:layout_weight="1"
                         android:orientation="vertical">
 
@@ -203,7 +273,7 @@
                             android:layout_height="wrap_content"
                             android:text="Hiragana"
                             android:textColor="@color/colorOnBackground"
-                            android:textSize="20sp"
+                            android:textSize="18sp"
                             android:textStyle="bold" />
 
                         <TextView
@@ -212,16 +282,16 @@
                             android:layout_marginTop="2dp"
                             android:text="46 basic characters"
                             android:textColor="@color/colorOnBackgroundSecondary"
-                            android:textSize="14sp" />
+                            android:textSize="13sp" />
 
                     </LinearLayout>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text=">"
+                        android:text="›"
                         android:textColor="@color/colorOnBackgroundSecondary"
-                        android:textSize="24sp" />
+                        android:textSize="26sp" />
 
                 </LinearLayout>
 
@@ -232,12 +302,12 @@
                 android:id="@+id/cardKatakana"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="12dp"
+                android:layout_marginBottom="10dp"
                 android:clickable="true"
                 android:focusable="true"
                 app:cardBackgroundColor="@color/colorSurface"
                 app:cardCornerRadius="20dp"
-                app:cardElevation="2dp"
+                app:cardElevation="0dp"
                 app:rippleColor="@color/colorAccentLight"
                 app:strokeColor="@color/colorCardStroke"
                 app:strokeWidth="1dp">
@@ -247,169 +317,16 @@
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:padding="20dp">
+                    android:padding="18dp">
 
                     <TextView
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
+                        android:layout_width="52dp"
+                        android:layout_height="52dp"
                         android:background="@drawable/circle_accent"
                         android:gravity="center"
                         android:text="ア"
                         android:textColor="@color/colorOnPrimary"
-                        android:textSize="28sp" />
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Katakana"
-                            android:textColor="@color/colorOnBackground"
-                            android:textSize="20sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="2dp"
-                            android:text="46 basic characters"
-                            android:textColor="@color/colorOnBackgroundSecondary"
-                            android:textSize="14sp" />
-
-                    </LinearLayout>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=">"
-                        android:textColor="@color/colorOnBackgroundSecondary"
-                        android:textSize="24sp" />
-
-                </LinearLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-
-            <!-- Mixture Card -->
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/cardMixture"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="24dp"
-                android:clickable="true"
-                android:focusable="true"
-                app:cardBackgroundColor="@color/colorSurface"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="2dp"
-                app:rippleColor="@color/colorWarningLight"
-                app:strokeColor="@color/colorCardStroke"
-                app:strokeWidth="1dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:padding="20dp">
-
-                    <TextView
-                        android:layout_width="60dp"
-                        android:layout_height="60dp"
-                        android:background="@drawable/circle_warning"
-                        android:gravity="center"
-                        android:text="混"
-                        android:textColor="@color/colorOnPrimary"
-                        android:textSize="28sp" />
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Mixed"
-                            android:textColor="@color/colorOnBackground"
-                            android:textSize="20sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="2dp"
-                            android:text="Both character sets"
-                            android:textColor="@color/colorOnBackgroundSecondary"
-                            android:textSize="14sp" />
-
-                    </LinearLayout>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text=">"
-                        android:textColor="@color/colorOnBackgroundSecondary"
-                        android:textSize="24sp" />
-
-                </LinearLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-
-            <!-- Reading Practice Section -->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="12dp"
-                android:text="@string/section_reading"
-                android:textColor="@color/colorOnBackground"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:text="@string/reading_subtitle"
-                android:textColor="@color/colorOnBackgroundSecondary"
-                android:textSize="13sp" />
-
-            <!-- Reading — Hiragana -->
-            <com.google.android.material.card.MaterialCardView
-                android:id="@+id/cardReadingHiragana"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
-                android:clickable="true"
-                android:focusable="true"
-                app:cardBackgroundColor="@color/colorSurface"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="2dp"
-                app:rippleColor="@color/colorPrimaryLight"
-                app:strokeColor="@color/colorCardStroke"
-                app:strokeWidth="1dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:orientation="horizontal"
-                    android:padding="16dp">
-
-                    <TextView
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
-                        android:background="@drawable/circle_primary"
-                        android:gravity="center"
-                        android:text="あ"
-                        android:textColor="@color/colorOnPrimary"
-                        android:textSize="22sp" />
+                        android:textSize="26sp" />
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -421,16 +338,16 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Hiragana"
+                            android:text="Katakana"
                             android:textColor="@color/colorOnBackground"
-                            android:textSize="17sp"
+                            android:textSize="18sp"
                             android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
-                            android:text="@string/reading_hiragana_desc"
+                            android:text="46 basic characters"
                             android:textColor="@color/colorOnBackgroundSecondary"
                             android:textSize="13sp" />
 
@@ -439,9 +356,162 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text=">"
+                        android:text="›"
                         android:textColor="@color/colorOnBackgroundSecondary"
+                        android:textSize="26sp" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Mixed Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardMixture"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="28dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardBackgroundColor="@color/colorSurface"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="0dp"
+                app:rippleColor="@color/colorWarningLight"
+                app:strokeColor="@color/colorCardStroke"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="18dp">
+
+                    <TextView
+                        android:layout_width="52dp"
+                        android:layout_height="52dp"
+                        android:background="@drawable/circle_warning"
+                        android:gravity="center"
+                        android:text="混"
+                        android:textColor="@color/colorOnPrimary"
+                        android:textSize="26sp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="14dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Mixed"
+                            android:textColor="@color/colorOnBackground"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
+                            android:text="Both character sets"
+                            android:textColor="@color/colorOnBackgroundSecondary"
+                            android:textSize="13sp" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="›"
+                        android:textColor="@color/colorOnBackgroundSecondary"
+                        android:textSize="26sp" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Reading Section Header -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:text="@string/section_reading"
+                android:textColor="@color/colorOnBackground"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:letterSpacing="0.01" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                android:text="@string/reading_subtitle"
+                android:textColor="@color/colorOnBackgroundSecondary"
+                android:textSize="13sp" />
+
+            <!-- Reading — Hiragana -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardReadingHiragana"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:clickable="true"
+                android:focusable="true"
+                app:cardBackgroundColor="@color/colorSurface"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="0dp"
+                app:rippleColor="@color/colorPrimaryLight"
+                app:strokeColor="@color/colorCardStroke"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="14dp">
+
+                    <TextView
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:background="@drawable/circle_primary"
+                        android:gravity="center"
+                        android:text="あ"
+                        android:textColor="@color/colorOnPrimary"
                         android:textSize="20sp" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Hiragana"
+                            android:textColor="@color/colorOnBackground"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="1dp"
+                            android:text="@string/reading_hiragana_desc"
+                            android:textColor="@color/colorOnBackgroundSecondary"
+                            android:textSize="12sp" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="›"
+                        android:textColor="@color/colorOnBackgroundSecondary"
+                        android:textSize="22sp" />
 
                 </LinearLayout>
 
@@ -452,12 +522,12 @@
                 android:id="@+id/cardReadingKatakana"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="8dp"
                 android:clickable="true"
                 android:focusable="true"
                 app:cardBackgroundColor="@color/colorSurface"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="2dp"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="0dp"
                 app:rippleColor="@color/colorAccentLight"
                 app:strokeColor="@color/colorCardStroke"
                 app:strokeWidth="1dp">
@@ -467,21 +537,21 @@
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:padding="16dp">
+                    android:padding="14dp">
 
                     <TextView
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
                         android:background="@drawable/circle_accent"
                         android:gravity="center"
                         android:text="ア"
                         android:textColor="@color/colorOnPrimary"
-                        android:textSize="22sp" />
+                        android:textSize="20sp" />
 
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="14dp"
+                        android:layout_marginStart="12dp"
                         android:layout_weight="1"
                         android:orientation="vertical">
 
@@ -490,25 +560,25 @@
                             android:layout_height="wrap_content"
                             android:text="Katakana"
                             android:textColor="@color/colorOnBackground"
-                            android:textSize="17sp"
+                            android:textSize="16sp"
                             android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="2dp"
+                            android:layout_marginTop="1dp"
                             android:text="@string/reading_katakana_desc"
                             android:textColor="@color/colorOnBackgroundSecondary"
-                            android:textSize="13sp" />
+                            android:textSize="12sp" />
 
                     </LinearLayout>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text=">"
+                        android:text="›"
                         android:textColor="@color/colorOnBackgroundSecondary"
-                        android:textSize="20sp" />
+                        android:textSize="22sp" />
 
                 </LinearLayout>
 
@@ -519,12 +589,12 @@
                 android:id="@+id/cardReadingMixed"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="8dp"
                 android:clickable="true"
                 android:focusable="true"
                 app:cardBackgroundColor="@color/colorSurface"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="2dp"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="0dp"
                 app:rippleColor="@color/colorWarningLight"
                 app:strokeColor="@color/colorCardStroke"
                 app:strokeWidth="1dp">
@@ -534,21 +604,21 @@
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:padding="16dp">
+                    android:padding="14dp">
 
                     <TextView
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
                         android:background="@drawable/circle_warning"
                         android:gravity="center"
                         android:text="混"
                         android:textColor="@color/colorOnPrimary"
-                        android:textSize="22sp" />
+                        android:textSize="20sp" />
 
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="14dp"
+                        android:layout_marginStart="12dp"
                         android:layout_weight="1"
                         android:orientation="vertical">
 
@@ -557,25 +627,25 @@
                             android:layout_height="wrap_content"
                             android:text="Mixed Kana"
                             android:textColor="@color/colorOnBackground"
-                            android:textSize="17sp"
+                            android:textSize="16sp"
                             android:textStyle="bold" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="2dp"
+                            android:layout_marginTop="1dp"
                             android:text="@string/reading_mixed_desc"
                             android:textColor="@color/colorOnBackgroundSecondary"
-                            android:textSize="13sp" />
+                            android:textSize="12sp" />
 
                     </LinearLayout>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text=">"
+                        android:text="›"
                         android:textColor="@color/colorOnBackgroundSecondary"
-                        android:textSize="20sp" />
+                        android:textSize="22sp" />
 
                 </LinearLayout>
 
@@ -586,36 +656,36 @@
                 android:id="@+id/cardReadingKanji"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="24dp"
+                android:layout_marginBottom="28dp"
                 android:clickable="true"
                 android:focusable="true"
                 app:cardBackgroundColor="@color/colorSurface"
-                app:cardCornerRadius="20dp"
-                app:cardElevation="2dp"
+                app:cardCornerRadius="18dp"
+                app:cardElevation="0dp"
                 app:rippleColor="@color/colorPrimaryLight"
-                app:strokeColor="@color/colorPrimary"
-                app:strokeWidth="1.5dp">
+                app:strokeColor="@color/colorCardStroke"
+                app:strokeWidth="1dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
                     android:orientation="horizontal"
-                    android:padding="16dp">
+                    android:padding="14dp">
 
                     <TextView
-                        android:layout_width="48dp"
-                        android:layout_height="48dp"
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
                         android:background="@drawable/circle_reading"
                         android:gravity="center"
                         android:text="漢"
                         android:textColor="@color/colorOnPrimary"
-                        android:textSize="22sp" />
+                        android:textSize="20sp" />
 
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="14dp"
+                        android:layout_marginStart="12dp"
                         android:layout_weight="1"
                         android:orientation="vertical">
 
@@ -630,7 +700,7 @@
                                 android:layout_height="wrap_content"
                                 android:text="Kanji"
                                 android:textColor="@color/colorOnBackground"
-                                android:textSize="17sp"
+                                android:textSize="16sp"
                                 android:textStyle="bold" />
 
                             <TextView
@@ -638,13 +708,13 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="8dp"
                                 android:background="@drawable/badge_advanced"
-                                android:paddingStart="8dp"
-                                android:paddingEnd="8dp"
+                                android:paddingStart="7dp"
+                                android:paddingEnd="7dp"
                                 android:paddingTop="2dp"
                                 android:paddingBottom="2dp"
                                 android:text="Advanced"
                                 android:textColor="@color/colorOnPrimary"
-                                android:textSize="10sp"
+                                android:textSize="9sp"
                                 android:textStyle="bold" />
 
                         </LinearLayout>
@@ -652,30 +722,29 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="2dp"
+                            android:layout_marginTop="1dp"
                             android:text="@string/reading_kanji_desc"
                             android:textColor="@color/colorOnBackgroundSecondary"
-                            android:textSize="13sp" />
+                            android:textSize="12sp" />
 
                     </LinearLayout>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text=">"
+                        android:text="›"
                         android:textColor="@color/colorOnBackgroundSecondary"
-                        android:textSize="20sp" />
+                        android:textSize="22sp" />
 
                 </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- Credits -->
+            <!-- Footer -->
             <TextView
                 android:id="@+id/textCredits"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
                 android:text="Developed by @otzua"
                 android:textColor="@color/colorPrimary"
                 android:textSize="12sp"
@@ -685,17 +754,16 @@
                 android:background="?attr/selectableItemBackground"
                 android:padding="4dp" />
 
-            <!-- Version -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
+                android:layout_marginTop="4dp"
                 android:text="@string/VersionNumber"
                 android:textColor="@color/colorOnBackgroundSecondary"
-                android:textSize="12sp" />
+                android:textSize="11sp" />
 
         </LinearLayout>
 
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

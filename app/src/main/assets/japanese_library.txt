@@ -1,0 +1,331 @@
+# Japanese Learning Library — FLJS App
+# Format: SCRIPT|DIFFICULTY|japanese|romaji|english|source
+# SCRIPT: H=hiragana  K=katakana  M=mixed  J=kanji
+# DIFFICULTY: B=beginner  I=intermediate  A=advanced
+# Newlines within a passage are encoded as literal \n
+#
+M|I|にほんには はる なつ あき ふゆの よつの きせつが あります。\nはるには サクラが さきます。\nなつは あつくて、よく プールに いきます。\nあきには もみじが あかく なります。\nふゆは さむいですが、ゆきが とても きれいです。|Nihon ni wa haru natsu aki fuyu no yottsu no kisetsu ga arimasu.\nHaru ni wa sakura ga sakimasu.\nNatsu wa atsukute, yoku puuru ni ikimasu.\nAki ni wa momiji ga akaku narimasu.\nFuyu wa samui desu ga, yuki ga totemo kirei desu.|Japan has four seasons: spring, summer, autumn, and winter.\nIn spring cherry blossoms bloom.\nSummer is hot and I often go to the pool.\nIn autumn maple leaves turn red.\nWinter is cold but the snow is beautiful.|Mixed N4
+M|I|スマートフォンは いまの せいかつに なくては なりません。\nメッセージを おくったり、ニュースを よんだり できます。\nしかし、つかいすぎに ちゅういが ひつようです。|Sumaatofon wa ima no seikatsu ni nakute wa narimasen.\nMesseeji wo okuttari, nyuusu wo yondari dekimasu.\nShikashi, tsukaisugi ni chuui ga hitsuyou desu.|Smartphones are indispensable in daily life now.\nYou can send messages, read news, and more.\nHowever, care is needed not to overuse them.|Mixed N4
+M|I|コンビニは にほんの にちじょうせいかつに かかせません。\n24じかん えいぎょうしていて、たべものや のみものだけでなく、\nATMや コピーきも つかえます。\nサービスが ゆたかで、がいこくじんにも にんきです。|Konbini wa Nihon no nichijou seikatsu ni kakasemasen.\n24jikan eigyou shite ite, tabemono ya nomimono dake de naku,\nATM ya kopii ki mo tsukaemasu.\nSaabisu ga yutaka de, gaikokujin ni mo ninki desu.|Convenience stores are indispensable to daily life in Japan.\nOpen 24 hours, they offer not just food and drinks,\nbut also ATMs and copy machines.\nWith rich services, they are popular even among foreigners.|Mixed N4
+M|I|まいあさ、スマホの アラームで おきます。\nまず ニュースアプリを チェックして、\nそれから シャワーを あびます。\nアサゴハンは かんたんに トーストと コーヒーです。|Maiasa, sumaho no aramu de okimasu.\nMazu nyuusu apuri wo chekku shite,\nsorekara shawaa wo abimasu.\nAsagohan wa kantan ni toosuto to koohii desu.|Every morning I wake up to my smartphone alarm.\nFirst I check the news app,\nthen I take a shower.\nFor breakfast I simply have toast and coffee.|Mixed N4
+M|I|ネットで しらべてから、レストランを えらびます。\nレビューを よんで、ひょうかが いいところに いきます。\nよやくも オンラインで できるので べんりです。|Netto de shirabete kara, resutoran wo erabimasu.\nRebyuu wo yonde, hyouka ga ii tokoro ni ikimasu.\nYoyaku mo onrain de dekiru no de benri desu.|I research online before choosing a restaurant.\nI read reviews and go to the best-rated place.\nReservations can also be made online so it's convenient.|Mixed N4
+M|I|せんしゅうの しゅうまつ、ともだちと ドライブに いきました。\nうみの ちかくの レストランで シーフードを たべました。\nイカや エビが とても おいしかったです。|Senshuu no shuumatsu, tomodachi to doraibu ni ikimashita.\nUmi no chikaku no resutoran de shiifuudo wo tabemashita.\nIka ya ebi ga totemo oishikatta desu.|Last weekend I went on a drive with friends.\nI ate seafood at a restaurant near the sea.\nThe squid and shrimp were very delicious.|Mixed N4
+M|I|にほんの ゲームは せかいじゅうで にんきが あります。\nマリオや ポケモンは どこの くにでも しられています。\nゲームを とおして にほんごを まなぶ ひとも おおいです。|Nihon no geemu wa sekaijuu de ninki ga arimasu.\nMario ya Pokemon wa doko no kuni demo shirareteimasu.\nGeemu wo tooshite nihongo wo manabu hito mo ooi desu.|Japanese games are popular all over the world.\nMario and Pokemon are known in every country.\nMany people also learn Japanese through games.|Mixed N4
+M|I|ともだちと ラインで れんらくを とります。\nグループチャットで みんなと はなします。\nスタンプを おくると たのしいです。\nデジタルな コミュニケーションも たいせつです。|Tomodachi to Rain de renraku wo torimasu.\nGuruupu chatto de minna to hanashimasu.\nSutanpu wo okuru to tanoshii desu.\nDejitaru na komyunikeeshon mo taisetsu desu.|I keep in touch with friends through LINE.\nI chat with everyone in group chats.\nSending stickers is fun.\nDigital communication is also important.|Mixed N4
+M|I|カフェで ラップトップを ひらいて しごとを します。\nWi-Fiが あって、コンセントも あるので べんりです。\nコーヒーを のみながら しごとすると はかどります。|Kafe de rapputoppu wo hiraite shigoto wo shimasu.\nWi-Fi ga atte, konsento mo aru no de benri desu.\nKoohii wo nominagara shigoto suru to hakadorimasu.|I open my laptop at the café and work.\nThere's Wi-Fi and power outlets, so it's convenient.\nWork progresses when I work while drinking coffee.|Mixed N4
+M|I|さくらの きせつに にほんを たびしたいです。\nハナミを しながら おべんとうを たべて、\nにほんの はるを たいかんしたいです。\nピンクの さくらは とても ロマンチックです。|Sakura no kisetsu ni Nihon wo tabi shitai desu.\nHanami wo shinagara obentou wo tabete,\nNihon no haru wo taikan shitai desu.\nPinku no sakura wa totemo romantikku desu.|I want to travel Japan during cherry blossom season.\nWhile doing flower viewing and eating a boxed lunch,\nI want to experience Japanese spring.\nThe pink cherry blossoms are very romantic.|Mixed N4
+M|I|グローバルかが すすむ なかで、えいごだけでなく、\nほかの がいこくごを まなぶ ひとも ふえています。\nとくに アジアの ことばへの きょうみが たかまっています。|Guroobaruka ga susumu naka de, eigo dake de naku,\nhoka no gaikokugo wo manabu hito mo fuete imasu.\nTokuni Ajia no kotoba e no kyoumi ga takamatte imasu.|As globalization advances, not only English but\nmore people are also learning other foreign languages.\nIn particular, interest in Asian languages is growing.|Mixed N4
+M|I|まいにち すこしずつ たんごを おぼえると、\nいつのまにか たくさん おぼえられます。\nフラッシュカードアプリが べんりです。\nくりかえし れんしゅうすることが だいじです。|Mainichi sukoshi zutsu tango wo oboeru to,\nitsu no ma ni ka takusan oboeraremasu.\nFurasshuu kaado apuri ga benri desu.\nKurikaeshi renshuu suru koto ga daiji desu.|If you memorize vocabulary a little every day,\nbefore you know it you'll have memorized a lot.\nFlashcard apps are convenient.\nRepeated practice is important.|Mixed N4
+M|I|おきなわりょうりは ユニークです。\nゴーヤチャンプルーは にがいけど、\nなれると おいしく かんじます。\nオリオンビールとの あいしょうも ぴったりです。|Okinawa ryouri wa yuniku desu.\nGooya chanpuruu wa nigai kedo,\nnareru to oishiku kanjimasu.\nOrion biiru to no aishou mo pittari desu.|Okinawan cuisine is unique.\nGoya champuru is bitter, but\nonce you get used to it it tastes delicious.\nThe pairing with Orion beer is also perfect.|Mixed N4
+M|I|にほんの バスシステムは とても べんりです。\nICカードで タッチするだけで のれます。\nさいきんは スマホでも しはらいが できます。|Nihon no basu shisutemu wa totemo benri desu.\nIC kaado de tatchi suru dake de noremasu.\nSaikin wa sumaho de mo shiharai ga dekimasu.|Japan's bus system is very convenient.\nYou can ride just by tapping with an IC card.\nRecently you can also pay with a smartphone.|Mixed N4
+M|I|たなかさんは プログラマーです。\nまいにち コンピューターで コードを かいています。\nしごとは むずかしいですが、とても やりがいが あります。\nあたらしい アプリを つくることが ゆめです。|Tanaka-san wa purograamaa desu.\nMainichi konpyuutaa de koodo wo kaite imasu.\nShigoto wa muzukashii desu ga, totemo yarigai ga arimasu.\nAtarashii apuri wo tsukuru koto ga yume desu.|Mr. Tanaka is a programmer.\nEvery day he writes code on a computer.\nThe work is difficult but very rewarding.\nHis dream is to create a new app.|Mixed N4
+M|A|テクノロジーの しんぽにより、AIが いろいろな ぶんやで かつようされています。\nいりょう、きょういく、ビジネスなど、さまざまな セクターで\nAIの どうにゅうが すすんでいます。\nいっぽうで、プライバシーや セキュリティの もんだいも\nしんけんに かんがえる ひつようが あります。|Tekunorojii no shinpo ni yori, AI ga iroiro na bunya de katsuyou sarete imasu.\nIryou, kyouiku, bijinesu nado, samazama na sekutaa de\nAI no dounyuu ga susunde imasu.\nIppou de, puraibasii ya sekyuriti no mondai mo\nsinken ni kangaeru hitsuyou ga arimasu.|Due to technological progress, AI is being utilized in various fields.\nIn various sectors such as medicine, education, and business,\nthe introduction of AI is progressing.\nOn the other hand, issues of privacy and security\nalso need to be seriously considered.|Mixed advanced
+M|A|SNSの ふきゅうにより、ひとびとの コミュニケーションの しかたが おおきく かわりました。\nフェイスブックや ツイッターなどを つかって、\nせかいじゅうの ひとと つながることが できます。\nしかし、ネット上の ハラスメントも しゃかいもんだいに なっています。|SNS no fukyuu ni yori, hitobito no komyunikeeshon no shikata ga ookiku kawarimashita.\nFeesubukku ya Tsuittaa nado wo tsukatte,\nsekaijuu no hito to tsunagaru koto ga dekimasu.\nShikashi, netto-jou no harasumento mo shakai mondai ni natte imasu.|Due to the spread of social media, how people communicate has changed greatly.\nUsing Facebook, Twitter and others,\nyou can connect with people around the world.\nHowever, online harassment has also become a social problem.|Mixed advanced
+M|A|グローバル化が すすむ げんだいにおいて、\nいぶんか りかいの じゅうようせいは ますます たかまっています。\nことなる ぶんかてき はいけいを もつ ひとびとと きょうどう するためには、\nそうご りかいと そんちょうの せいしんが ふかけつです。|Guroobaruka ga susumu gendai ni oite,\nibunka rikai no juuyousei wa masumasu takamatte imasu.\nKotonaru bunkakeki haikei wo motsu hitobito to kyoudou suru tame ni wa,\nsougo rikai to sonchou no seishin ga fukaketsu desu.|In the modern era of advancing globalization,\nthe importance of cross-cultural understanding is increasingly growing.\nTo collaborate with people from different cultural backgrounds,\nthe spirit of mutual understanding and respect is indispensable.|Mixed advanced
+J|B|今日は晴れです。|Kyou wa hare desu.|Today is sunny.|JLPT N5
+J|B|私は学生です。|Watashi wa gakusei desu.|I am a student.|JLPT N5
+J|B|これは本です。|Kore wa hon desu.|This is a book.|JLPT N5
+J|B|あの山は高いです。|Ano yama wa takai desu.|That mountain is tall.|JLPT N5
+J|B|川の水はきれいです。|Kawa no mizu wa kirei desu.|The river water is clean.|JLPT N5
+J|B|七転び八起き。|Nana korobi ya oki.|Fall seven times, stand up eight.|JLPT N5
+J|B|石の上にも三年。|Ishi no ue ni mo san-nen.|Patience and persistence lead to success.|JLPT N5
+J|B|花より団子。|Hana yori dango.|Practical over aesthetic.|JLPT N5
+J|B|時は金なり。|Jikan wa kane nari.|Time is money.|JLPT N5
+J|B|早起きは三文の徳。|Hayaoki wa sanmon no toku.|The early bird catches the worm.|JLPT N5
+J|B|毎朝、公園を散歩します。\n緑が多くて、気持ちがいいです。|Maiasa, kouen wo sanpo shimasu.\nMidori ga ookutte, kimochi ga ii desu.|Every morning I take a walk in the park.\nThere is lots of greenery and it feels good.|JLPT N5
+J|B|日本の食べ物はおいしいです。|Nihon no tabemono wa oishii desu.|Japanese food is delicious.|JLPT N5
+J|B|今日は何日ですか。|Kyou wa nannichi desu ka.|What day of the month is today?|JLPT N5
+J|B|明日は月曜日です。|Ashita wa getsuyoubi desu.|Tomorrow is Monday.|JLPT N5
+J|B|私の家は学校の近くにあります。|Watashi no ie wa gakkou no chikaku ni arimasu.|My house is near the school.|JLPT N5
+J|B|駅まで歩いて十分かかります。|Eki made aruite juppun kakarimasu.|It takes ten minutes on foot to the station.|JLPT N5
+J|B|電車で会社に行きます。|Densha de kaisha ni ikimasu.|I go to the company by train.|JLPT N5
+J|B|毎日日本語を勉強しています。|Mainichi nihongo wo benkyou shite imasu.|I study Japanese every day.|JLPT N5
+J|B|日本語は難しいですが、楽しいです。|Nihongo wa muzukashii desu ga, tanoshii desu.|Japanese is difficult but fun.|JLPT N5
+J|B|学校で友達を作りました。|Gakkou de tomodachi wo tsukurimashita.|I made friends at school.|JLPT N5
+J|B|先生は親切です。|Sensei wa shinsetsu desu.|The teacher is kind.|JLPT N5
+J|B|図書館で本を読みます。|Toshokan de hon wo yomimasu.|I read books at the library.|JLPT N5
+J|B|食堂でご飯を食べます。|Shokudou de gohan wo tabemasu.|I eat rice at the cafeteria.|JLPT N5
+J|B|春は桜がきれいです。|Haru wa sakura ga kirei desu.|Cherry blossoms are beautiful in spring.|JLPT N5
+J|B|秋は紅葉が美しいです。|Aki wa kouyou ga utsukushii desu.|Autumn leaves are beautiful in fall.|JLPT N5
+J|B|冬は雪が降ります。|Fuyu wa yuki ga furimasu.|It snows in winter.|JLPT N5
+J|B|夏は海に行きます。|Natsu wa umi ni ikimasu.|I go to the sea in summer.|JLPT N5
+J|B|父は医者です。|Chichi wa isha desu.|My father is a doctor.|JLPT N5
+J|B|母は先生です。|Haha wa sensei desu.|My mother is a teacher.|JLPT N5
+J|B|兄は大学生です。|Ani wa daigakusei desu.|My older brother is a university student.|JLPT N5
+J|B|犬が好きです。|Inu ga suki desu.|I like dogs.|JLPT N5
+J|B|猫も好きです。|Neko mo suki desu.|I also like cats.|JLPT N5
+J|B|新しい自転車を買いました。|Atarashii jitensha wo kaimashita.|I bought a new bicycle.|JLPT N5
+J|B|友達に手紙を書きました。|Tomodachi ni tegami wo kakimashita.|I wrote a letter to my friend.|JLPT N5
+J|B|映画を見ました。|Eiga wo mimashita.|I watched a movie.|JLPT N5
+J|B|音楽を聞きます。|Ongaku wo kikimasu.|I listen to music.|JLPT N5
+J|B|料理が上手です。|Ryouri ga jouzu desu.|I am good at cooking.|JLPT N5
+J|B|旅行が大好きです。|Ryokou ga daisuki desu.|I love traveling.|JLPT N5
+J|B|日本に行きたいです。|Nihon ni ikitai desu.|I want to go to Japan.|JLPT N5
+J|B|健康のために運動します。|Kenkou no tame ni undou shimasu.|I exercise for my health.|JLPT N5
+J|B|毎日ご飯を三回食べます。|Mainichi gohan wo sankai tabemasu.|I eat meals three times a day.|JLPT N5
+J|B|今日は仕事がありません。|Kyou wa shigoto ga arimasen.|Today I have no work.|JLPT N5
+J|B|明日は雨が降るでしょう。|Ashita wa ame ga furu deshou.|It will probably rain tomorrow.|JLPT N5
+J|B|図書館で勉強しました。|Toshokan de benkyou shimashita.|I studied at the library.|JLPT N5
+J|B|先週、映画を見ました。|Senshuu, eiga wo mimashita.|Last week I watched a movie.|JLPT N5
+J|B|来月、旅行に行きます。|Raigetsu, ryokou ni ikimasu.|Next month I will travel.|JLPT N5
+J|B|父が車を買いました。|Chichi ga kuruma wo kaimashita.|My father bought a car.|JLPT N5
+J|B|母が料理を作りました。|Haha ga ryouri wo tsukurimashita.|My mother made a meal.|JLPT N5
+J|B|公園で子供たちが遊んでいます。|Kouen de kodomotachi ga asonde imasu.|Children are playing in the park.|JLPT N5
+J|B|電車は八時に出発します。|Densha wa hachiji ni shuppatsu shimasu.|The train departs at eight o'clock.|JLPT N5
+J|B|毎朝六時に起きます。|Maiasa rokuji ni okimasu.|I wake up at six every morning.|JLPT N5
+J|B|週末に家の掃除をします。|Shuumatsu ni ie no souji wo shimasu.|I clean the house on weekends.|JLPT N5
+J|B|台所で料理をします。|Daidokoro de ryouri wo shimasu.|I cook in the kitchen.|JLPT N5
+J|B|犬の散歩をします。|Inu no sanpo wo shimasu.|I walk the dog.|JLPT N5
+J|B|新聞を読みます。|Shinbun wo yomimasu.|I read the newspaper.|JLPT N5
+J|B|外国語を学びたいです。|Gaikokugo wo manabi tai desu.|I want to learn a foreign language.|JLPT N5
+J|I|昨日、友達と映画を見ました。\n映画はとても面白かったです。\nその後、一緒にラーメンを食べました。\n楽しい一日でした。|Kinou, tomodachi to eiga wo mimashita.\nEiga wa totemo omoshirokatta desu.\nSono ato, issho ni raamen wo tabemashita.\nTanoshii ichinichi deshita.|Yesterday I watched a movie with a friend.\nThe movie was very interesting.\nAfterwards we ate ramen together.\nIt was a fun day.|JLPT N4/N3
+J|I|日本には四つの季節があります。\n春には桜が咲き、夏は暑く、\n秋には紅葉が美しく、冬は寒いです。\nそれぞれの季節に、特別な楽しみがあります。|Nihon ni wa yottsu no kisetsu ga arimasu.\nHaru ni wa sakura ga saki, natsu wa atsuku,\naki ni wa kouyou ga utsukushiku, fuyu wa samui desu.\nSorezore no kisetsu ni, tokubetsu na tanoshimi ga arimasu.|Japan has four seasons.\nIn spring cherry blossoms bloom, summer is hot,\nin autumn the autumn leaves are beautiful, and winter is cold.\nEach season has special pleasures.|JLPT N4/N3
+J|I|百聞は一見に如かず。|Hyakubun wa ikken ni shikazu.|Hearing a hundred times is not as good as seeing once.|JLPT N4/N3
+J|I|急がば回れ。|Isogaba maware.|Haste makes waste.|JLPT N4/N3
+J|I|継続は力なり。|Keizoku wa chikara nari.|Continuity is power — practice makes perfect.|JLPT N4/N3
+J|I|失敗は成功のもと。|Shippai wa seikou no moto.|Failure is the foundation of success.|JLPT N4/N3
+J|I|知識は力なり。|Chishiki wa chikara nari.|Knowledge is power.|JLPT N4/N3
+J|I|日本の電車はとても時間に正確です。\n一分も遅れないことで有名です。\n乗客はいつも信頼できます。|Nihon no densha wa totemo jikan ni seikaku desu.\nIppun mo okurenai koto de yuumei desu.\nJoukyaku wa itsumo shinrai dekimasu.|Japanese trains are very punctual.\nThey are famous for never being even one minute late.\nPassengers can always rely on them.|JLPT N4/N3
+J|I|日本の食文化は豊かで多様です。\n寿司、天ぷら、ラーメン、うどんなど、\n世界中で愛されている料理があります。\n各地域に特色ある郷土料理もあります。|Nihon no shoku bunka wa yutaka de tayou desu.\nSushi, tenpura, raamen, udon nado,\nsekaijuu de aisarete iru ryouri ga arimasu.\nKaku chiiki ni tokushoku aru kyoudo ryouri mo arimasu.|Japan's food culture is rich and diverse.\nSushi, tempura, ramen, udon and more\nare foods loved around the world.\nEach region also has its own distinctive local cuisine.|JLPT N4/N3
+J|I|日本のアニメは世界中で人気があります。\n「ドラゴンボール」や「ワンピース」などは\n多くの国で放送されています。\nアニメを通じて日本語を学ぶ人も増えています。|Nihon no anime wa sekaijuu de ninki ga arimasu.\n'Doragon Booru' ya 'Wan Piisu' nado wa\nooku no kuni de housou sarete imasu.\nAnime wo tsuujite nihongo wo manabu hito mo fuete imasu.|Japanese anime is popular around the world.\nDragon Ball and One Piece for example\nare broadcast in many countries.\nThe number of people learning Japanese through anime is also increasing.|JLPT N4/N3
+J|I|日本語の勉強は毎日少しずつ続けることが大切です。\n単語を覚えるだけでなく、実際に使ってみることも重要です。\n失敗を恐れずに話してみましょう。|Nihongo no benkyou wa mainichi sukoshi zutsu tsuzukeru koto ga taisetsu desu.\nTango wo oboeru dake de naku, jissai ni tsukatte miru koto mo juuyou desu.\nShippai wo osoреzu hanashite mimashou.|It is important to continue studying Japanese a little every day.\nNot just memorizing words but actually trying to use them is also important.\nLet's try speaking without fearing mistakes.|JLPT N4/N3
+J|I|読書は知識を広げる最良の方法の一つです。\n本を読むことで、様々な世界を体験できます。\n毎日少なくとも三十分は読書する習慣をつけましょう。|Dokusho wa chishiki wo hirogeru sairyou no houhou no hitotsu desu.\nHon wo yomu koto de, samazama na sekai wo taiken dekimasu.\nMainichi sukunakutomo sanjuppun wa dokusho suru shukan wo tsukemashou.|Reading is one of the best ways to broaden knowledge.\nBy reading books you can experience various worlds.\nLet's build the habit of reading at least thirty minutes every day.|JLPT N4/N3
+J|I|旅行は新しい文化や人々と出会う絶好の機会です。\n外国に行くことで、視野が広がります。\n言葉が通じなくても、笑顔でコミュニケーションは取れます。|Ryokou wa atarashii bunka ya hitobito to deau zekkou no kikai desu.\nGaikoku ni iku koto de, shiya ga hirogarimasu.\nKotoba ga tsujinakute mo, egao de komyunikeeshon wa toremasu.|Travel is an excellent opportunity to encounter new cultures and people.\nBy going abroad your horizons broaden.\nEven if words don't work you can communicate with a smile.|JLPT N4/N3
+J|I|環境を守るために、私たち一人一人ができることがあります。\nリサイクルをする、ゴミを減らす、節電する、\nこうした小さな行動が地球を救うことにつながります。|Kankyou wo mamoru tame ni, watashitachi hitori hitori ga dekiru koto ga arimasu.\nRisaikuru wo suru, gomi wo herasu, setsuden suru,\nkouita chiisa na koudou ga chikyuu wo sukuu koto ni tsunagarimasu.|There are things each one of us can do to protect the environment.\nRecycling, reducing waste, saving electricity—\nthese small actions lead to saving the Earth.|JLPT N4/N3
+J|I|日本の伝統文化には、茶道、華道、書道などがあります。\nこれらは単なる技術ではなく、精神修養の道でもあります。\n現代でも多くの人がこれらを学んでいます。|Nihon no dentou bunka ni wa, chadou, kadou, shodou nado ga arimasu.\nKore ra wa tan naru gijutsu de wa naku, seishin shuuyou no michi demo arimasu.\nGendai de mo ooku no hito ga kore ra wo manande imasu.|Japanese traditional culture includes tea ceremony, flower arranging, and calligraphy.\nThese are not mere techniques but also paths of spiritual cultivation.\nEven today many people study these arts.|JLPT N4/N3
+J|I|桜の花は日本の春を象徴する花です。\n毎年三月から四月にかけて咲き誇ります。\n公園や川沿いで花見をする習慣があります。|Sakura no hana wa Nihon no haru wo shouchou suru hana desu.\nMaitoshi sangatsu kara shigatsu ni kakete saki hokori masu.\nKouen ya kawazoi de hanami wo suru shukan ga arimasu.|Cherry blossoms are flowers that symbolize Japanese spring.\nThey bloom proudly from March to April every year.\nThere is a custom of flower-viewing in parks and along rivers.|JLPT N4/N3
+J|I|「もったいない」という日本語の概念は、\n世界に広まっています。\nものを大切にし、無駄にしないという考え方で、\n環境保護の観点からも注目されています。|'Mottainai' to iu nihongo no gainen wa,\nsekai ni hiromatte imasu.\nMono wo taisetsu ni shi, muda ni shinai to iu kangaekata de,\nkankyou hogo no kanten kara mo chuumoku sarete imasu.|The Japanese concept of 'mottainai' is spreading around the world.\nIt is the idea of treasuring things and not wasting them,\nand is also attracting attention from an environmental perspective.|JLPT N4/N3
+J|I|日本のポップカルチャーは世界に影響を与えています。\nアニメ、マンガ、ゲームなどが\n多くの国の若者に愛されています。\nソフトパワーとしての日本文化の役割は大きいです。|Nihon no poppu karuchaa wa sekai ni eikyou wo ataete imasu.\nAnime, manga, geemu nado ga\nooku no kuni no wakamono ni aisarete imasu.\nSofuto pawaa toshite no Nihon bunka no yakuwari wa ookii desu.|Japanese pop culture is influencing the world.\nAnime, manga, games and more\nare loved by young people in many countries.\nThe role of Japanese culture as soft power is significant.|JLPT N4/N3
+J|I|インターネットの普及により、情報へのアクセスが容易になりました。\nしかし、情報の真偽を見極める能力も求められるようになっています。\nメディアリテラシーを身につけることが現代人には必要です。|Intaanetto no fukyuu ni yori, jouhou e no akusesu ga you ni narimashita.\nShikashi, jouhou no shingi wo mikiwameru nouryoku mo motomerareru you ni natte imasu.\nMedia riterasii wo mi ni tsukeru koto ga gendaijin ni wa hitsuyou desu.|Due to the spread of the internet, access to information has become easy.\nHowever, the ability to discern the truth of information is also becoming required.\nAcquiring media literacy is necessary for modern people.|JLPT N4/N3
+J|I|音楽は国境を超える共通言語です。\n言葉が通じなくても、音楽を通じて感動を共有できます。\nクラシック、ジャズ、ポップなど、ジャンルは様々ですが、\nすべての音楽に人々の心を動かす力があります。|Ongaku wa kokkyou wo koeru kyoutsu gengo desu.\nKotoba ga tsujinakute mo, ongaku wo tsuujite kandou wo kyouyuu dekimasu.\nKurashikku, jyazu, poppu nado, janru wa samazama desu ga,\nsubete no ongaku ni hitobito no kokoro wo ugokasu chikara ga arimasu.|Music is a common language that transcends national borders.\nEven when words don't work you can share emotion through music.\nClassical, jazz, pop and others — genres vary,\nbut all music has the power to move people's hearts.|JLPT N4/N3
+J|I|日本語の敬語は学ぶのが難しいですが、\nとても重要な言語文化です。\n話す相手によって言葉の使い方が変わります。\n慣れるまでに時間がかかりますが、\n使いこなせると印象がとても良くなります。|Nihongo no keigo wa manabu no ga muzukashii desu ga,\ntotemo juuyou na gengo bunka desu.\nHanasu aite ni yotte kotoba no tsukaikata ga kawarimasu.\nNareru made ni jikan ga kakarimasu ga,\ntsuikonaseru to inshou ga totemo yoku narimasu.|Honorific language in Japanese is difficult to learn,\nbut it is a very important linguistic culture.\nHow you use words changes depending on who you are speaking to.\nIt takes time to get used to,\nbut once mastered your impression becomes much better.|JLPT N4/N3
+J|A|技術の進歩によって、私たちの生活は大きく変わりました。\nスマートフォンのおかげで、どこでも情報を得られます。\nしかし、人と人との直接のふれあいも大切にしたいものです。|Gijutsu no shinpo ni yotte, watashitachi no seikatsu wa ookiku kawarimashita.\nSumaatofon no okage de, doko demo jouhou wo eraremasu.\nShikashi, hito to hito to no chokusetsu no fureau mo taisetsu ni shitai mono desu.|Due to advances in technology, our lives have changed greatly.\nThanks to smartphones we can obtain information anywhere.\nHowever, we should also value direct human connection.|JLPT N2/N1
+J|A|環境問題は現代社会が直面する最も深刻な課題の一つです。\n地球温暖化の影響で、異常気象が世界各地で増えています。\n私たちは一人一人が、エネルギーの節約やリサイクルに\n積極的に取り組む必要があります。|Kankyou mondai wa gendai shakai ga chokumen suru mottomo shinkoku na kadai no hitotsu desu.\nChikyuu ondanka no eikyou de, ijou kishou ga sekai kakuchi de fuete imasu.\nWatashitachi wa hitori hitori ga, enerugii no setsuyaku ya risaikuru ni\nsekkyokuteki ni torikumu hitsuyou ga arimasu.|Environmental issues are one of the most serious challenges modern society faces.\nDue to global warming, extreme weather is increasing worldwide.\nEach one of us needs to actively work on\nenergy conservation and recycling.|JLPT N2/N1
+J|A|夏目漱石の「吾輩は猫である」は、\n明治時代に書かれた有名な小説です。\n名前のない猫の目を通して、\n当時の社会と人間の様子が描かれています。|Natsume Souseki no 'Wagahai wa neko de aru' wa,\nMeiji jidai ni kakareta yuumei na shousetsu desu.\nNamae no nai neko no me wo tooshite,\ntouji no shakai to ningen no yousu ga egakarete imasu.|Natsume Soseki's 'I Am a Cat' is\na famous novel written in the Meiji era.\nThrough the eyes of a nameless cat,\nthe state of society and people of that time is depicted.|JLPT N2/N1
+J|A|人工知能の急速な発展は、社会に大きな変革をもたらしています。\n医療診断から自動運転まで、AIの応用範囲は広がり続けています。\nこの技術革新がもたらす恩恵と課題を、社会全体で議論していく必要があります。|Jinkou chinou no kyuusoku na hatten wa, shakai ni ooki na henkaku wo motarashite imasu.\nIryou shindan kara jidou unten made, AI no ouyou han'i wa hirogari tsuzukeite imasu.\nKono gijutsu kakushin ga motarasu onkei to kadai wo, shakai zentai de giron shite iku hitsuyou ga arimasu.|The rapid development of artificial intelligence is bringing great changes to society.\nFrom medical diagnosis to autonomous driving, the scope of AI applications continues to expand.\nWe need to discuss as a society the benefits and challenges this technological innovation brings.|JLPT N2/N1
+J|A|少子高齢化は日本が直面している重要な社会問題です。\n出生率の低下と平均寿命の延びにより、\n社会保障制度への負担が増加しています。\nこの問題を解決するためには、多角的なアプローチが必要です。|Shoushi kourei-ka wa Nihon ga chokumen shite iru juuyou na shakai mondai desu.\nShusseiritsu no teika to heikin jumyou no nobi ni yori,\nshakai hoshou seido e no futan ga zouka shite imasu.\nKono mondai wo kaiketsu suru tame ni wa, takakuteki na apuroochi ga hitsuyou desu.|Declining birthrate and aging population is an important social issue Japan faces.\nDue to declining birth rates and increasing average life expectancy,\nthe burden on the social security system is increasing.\nA multifaceted approach is necessary to solve this problem.|JLPT N2/N1
+J|A|グローバル化が進む現代において、異文化理解の重要性はますます高まっています。\n異なる文化的背景を持つ人々と協働するためには、\n相互理解と尊重の精神が不可欠です。\n多様性を認め、違いを強みとして活かすことが求められています。|Guroobaruka ga susumu gendai ni oite, ibunka rikai no juuyousei wa masumasu takamatte imasu.\nKotonaru bunkakeki haikei wo motsu hitobito to kyoudou suru tame ni wa,\nsougo rikai to sonchou no seishin ga fukaketsu desu.\nTayousei wo mitome, chigai wo tsuyomi toshite ikasu koto ga motomerarete imasu.|In the modern era of advancing globalization, cross-cultural understanding is increasingly important.\nTo collaborate with people from different cultural backgrounds,\nthe spirit of mutual understanding and respect is indispensable.\nWe are called to recognize diversity and leverage differences as strengths.|JLPT N2/N1
+J|A|松尾芭蕉は江戸時代の俳人であり、\n「奥の細道」などの紀行文で知られています。\n「古池や 蛙飛び込む 水の音」は\n彼の最も有名な俳句の一つです。|Matsuo Bashou wa Edo jidai no haijin de ari,\n'Oku no Hosomichi' nado no kikouбun de shirarete imasu.\n'Furuike ya kawazu tobikomu mizu no oto' wa\nkare no mottomo yuumei na haiku no hitotsu desu.|Matsuo Basho was a haiku poet of the Edo period,\nknown for travel writings such as 'Narrow Road to the Deep North'.\n'The old pond — a frog jumps in, sound of water' is\none of his most famous haiku.|JLPT N2/N1
+J|A|言語は単なるコミュニケーションの道具ではなく、\n思考の枠組みそのものであるとも言えます。\n異なる言語を学ぶことは、異なるものの見方を獲得することを意味します。\nそれゆえ、多言語話者は物事を多角的に捉える能力が高いとされています。|Gengo wa tan naru komyunikeeshon no dougu de wa naku,\nshikou no wakugumi sonomono de aru to mo iemasu.\nKotonaru gengo wo manabu koto wa, kotonaru mono no mikata wo kakutoku suru koto wo imishimasu.\nSoreyue, ta-gengo washa wa monogoto wo takakuteki ni toraeru nouryoku ga takai to sarete imasu.|Language is not merely a tool for communication,\nbut can also be said to be the very framework of thought.\nLearning a different language means acquiring a different way of seeing things.\nTherefore multilingual speakers are said to have a high ability to understand things from multiple angles.|JLPT N2/N1
+J|A|日本の伝統芸能である能楽は、\n世界最古の演劇形式の一つとされています。\n14世紀に観阿弥・世阿弥父子によって大成され、\n現代に至るまでその形式が受け継がれています。\nユネスコの無形文化遺産にも登録されています。|Nihon no dentou geinou de aru nougaku wa,\nsekai saiko no engeki keishiki no hitotsu to sarete imasu.\n14-seiki ni Kan'ami Zeami oyako ni yotte taisei sare,\ngendai ni itaru made sono keishiki ga uketsugarete imasu.\nYunesuko no mukei bunka isan ni mo touroku sarete imasu.|Noh theater, a traditional Japanese performing art,\nis considered one of the world's oldest theatrical forms.\nIt was perfected in the 14th century by Kan'ami and Zeami,\nand its form has been passed down to the present day.\nIt is also registered as a UNESCO Intangible Cultural Heritage.|JLPT N2/N1
+J|A|読書は魂の食物である、と古代ローマの哲学者は言いました。\nこの言葉は現代においても真実であり続けています。\n本を読むことで、私たちは時代や国境を超えた\n無数の人々の思考に触れることができます。|Dokusho wa tamashii no shokubutsu de aru, to kodai Rooma no tetsugakusha wa iimashita.\nKono kotoba wa gendai ni oite mo shinjitsu de ari tsuzukete imasu.\nHon wo yomu koto de, watashitachi wa jidai ya kokkyou wo koeta\nmusuu no hitobito no shikou ni fureru koto ga dekimasu.|Books are the food of the soul, as an ancient Roman philosopher said.\nThis saying continues to be true even in the modern era.\nBy reading books we can encounter the thoughts of\ncountless people across time and national borders.|JLPT N2/N1
+J|A|科学の発展は人類に多くの恩恵をもたらしてきましたが、\n同時に倫理的な問題も引き起こしています。\n遺伝子工学、クローン技術、人工知能など、\n新しい技術が登場するたびに、その利用の是非を\n社会全体で慎重に検討することが求められます。|Kagaku no hatten wa jinrui ni ooku no onkei wo motarashite kimashita ga,\ndouji ni rinriteki na mondai mo hikiokosite imasu.\nIdenshikougaku, kuroon gijutsu, jinkou chinou nado,\nAtarashii gijutsu ga toujou suru tabi ni, sono riyou no zehi wo\nshakai zentai de shinchou ni kentou suru koto ga motomeraremasu.|The development of science has brought many benefits to humanity,\nbut has simultaneously caused ethical problems.\nGenetic engineering, cloning, artificial intelligence and more —\nevery time a new technology appears, we are required\nto carefully consider as a society whether its use is appropriate.|JLPT N2/N1
+J|A|古来より人類は星空を見上げ、\n宇宙の神秘に思いを馳せてきました。\n現代の天文学は驚異的な速度で発展し、\nブラックホールの撮影にも成功しました。\nしかし、宇宙の謎はまだ多く残っており、\n人類の探求心を刺激し続けています。|Kodai yori jinrui wa hoshizora wo miage,\nuchu no shinpi ni omoi wo hasete kimashita.\nGendai no tenmongaku wa kyouiteki na sokudo de hatten shi,\nburaakku hooru no satsuei ni mo seikou shimashita.\nShikashi, uchu no nazo wa mada ooku nokotte ori,\njinrui no tankyuushin wo shigeki shi tsuzukete imasu.|Since ancient times humanity has looked up at the starry sky\nand been captivated by the mysteries of the universe.\nModern astronomy has developed at an amazing speed\nand has even succeeded in photographing black holes.\nHowever many mysteries of the universe remain,\ncontinuing to stimulate humanity's spirit of inquiry.|JLPT N2/N1
+H|B|わたしは がくせい です。|Watashi wa gakusei desu.|I am a student.|Hiragana N5
+H|B|これは ほん です。|Kore wa hon desu.|This is a book.|Hiragana N5
+H|B|あれは いぬ です。|Are wa inu desu.|That is a dog.|Hiragana N5
+H|B|ここは がっこう です。|Koko wa gakkou desu.|This place is a school.|Hiragana N5
+H|B|きょう は はれ です。|Kyou wa hare desu.|Today is sunny.|Hiragana N5
+H|B|わたしの なまえは たろう です。|Watashi no namae wa Tarou desu.|My name is Tarou.|Hiragana N5
+H|B|おはよう ございます。|Ohayou gozaimasu.|Good morning.|Hiragana N5
+H|B|こんにちは。|Konnichiwa.|Hello.|Hiragana N5
+H|B|こんばんは。|Konbanwa.|Good evening.|Hiragana N5
+H|B|おやすみなさい。|Oyasuminasai.|Good night.|Hiragana N5
+H|B|ありがとう ございます。|Arigatou gozaimasu.|Thank you very much.|Hiragana N5
+H|B|どういたしまして。|Dou itashimashite.|You're welcome.|Hiragana N5
+H|B|すみません。|Sumimasen.|Excuse me.|Hiragana N5
+H|B|ごめんなさい。|Gomennasai.|I'm sorry.|Hiragana N5
+H|B|はい、わかりました。|Hai, wakarimashita.|Yes, I understand.|Hiragana N5
+H|B|いいえ、ちがいます。|Iie, chigaimasu.|No, that's wrong.|Hiragana N5
+H|B|わたしは にほんごを べんきょう して います。|Watashi wa nihongo wo benkyou shite imasu.|I am studying Japanese.|Hiragana N5
+H|B|ねこ が います。|Neko ga imasu.|There is a cat.|Hiragana N5
+H|B|みず を のみます。|Mizu wo nomimasu.|I drink water.|Hiragana N5
+H|B|ごはん を たべます。|Gohan wo tabemasu.|I eat rice.|Hiragana N5
+H|B|ほん を よみます。|Hon wo yomimasu.|I read a book.|Hiragana N5
+H|B|えいが を みます。|Eiga wo mimasu.|I watch a movie.|Hiragana N5
+H|B|おんがく を ききます。|Ongaku wo kikimasu.|I listen to music.|Hiragana N5
+H|B|がっこう に いきます。|Gakkou ni ikimasu.|I go to school.|Hiragana N5
+H|B|うち に かえります。|Uchi ni kaerimasu.|I return home.|Hiragana N5
+H|B|おかあさん は やさしい です。|Okaasan wa yasashii desu.|My mother is kind.|Hiragana N5
+H|B|おとうさん は いしゃ です。|Otousan wa isha desu.|My father is a doctor.|Hiragana N5
+H|B|わたしは くだもの が すき です。|Watashi wa kudamono ga suki desu.|I like fruit.|Hiragana N5
+H|B|りんご は あまい です。|Ringo wa amai desu.|Apples are sweet.|Hiragana N5
+H|B|きょう は さむい です。|Kyou wa samui desu.|Today is cold.|Hiragana N5
+H|B|そら は あおい です。|Sora wa aoi desu.|The sky is blue.|Hiragana N5
+H|B|はな は きれい です。|Hana wa kirei desu.|The flowers are beautiful.|Hiragana N5
+H|B|いぬ は かわいい です。|Inu wa kawaii desu.|Dogs are cute.|Hiragana N5
+H|B|ともだち と あそびます。|Tomodachi to asobimasu.|I play with friends.|Hiragana N5
+H|B|まいにち にほんご を れんしゅう します。|Mainichi nihongo wo renshuu shimasu.|I practice Japanese every day.|Hiragana N5
+H|B|てれび を みます。|Terebi wo mimasu.|I watch television.|Hiragana N5
+H|B|あさ はやく おきます。|Asa hayaku okimasu.|I wake up early in the morning.|Hiragana N5
+H|B|よる おそく ねます。|Yoru osoku nemasu.|I go to sleep late at night.|Hiragana N5
+H|B|ろくじ に おきます。|Rokuji ni okimasu.|I wake up at six o'clock.|Hiragana N5
+H|B|でんしゃ で しごと に いきます。|Densha de shigoto ni ikimasu.|I go to work by train.|Hiragana N5
+H|B|にほんご は たのしい です。|Nihongo wa tanoshii desu.|Japanese is fun.|Hiragana N5
+H|B|としょかん で べんきょう します。|Toshokan de benkyou shimasu.|I study at the library.|Hiragana N5
+H|B|こうえん で さんぽ します。|Kouen de sanpo shimasu.|I take a walk in the park.|Hiragana N5
+H|B|みせ は ちかい です。|Mise wa chikai desu.|The shop is close.|Hiragana N5
+H|B|えき は とおい です。|Eki wa tooi desu.|The station is far.|Hiragana N5
+H|B|きのう あめ が ふりました。|Kinou ame ga furimashita.|It rained yesterday.|Hiragana N5
+H|B|はる は あたたかい です。|Haru wa atatakai desu.|Spring is warm.|Hiragana N5
+H|B|なつ は あつい です。|Natsu wa atsui desu.|Summer is hot.|Hiragana N5
+H|B|あき は すずしい です。|Aki wa suzushii desu.|Autumn is cool.|Hiragana N5
+H|B|ふゆ は さむい です。|Fuyu wa samui desu.|Winter is cold.|Hiragana N5
+H|B|にほんの たべもの は おいしい です。|Nihon no tabemono wa oishii desu.|Japanese food is delicious.|Hiragana N5
+H|B|すし が だいすき です。|Sushi ga daisuki desu.|I love sushi.|Hiragana N5
+H|B|ラーメン も すき です。|Raamen mo suki desu.|I also like ramen.|Hiragana N5
+H|B|おちゃ を のみます。|Ocha wo nomimasu.|I drink green tea.|Hiragana N5
+H|B|てがみ を かきます。|Tegami wo kakimasu.|I write a letter.|Hiragana N5
+H|B|うた を うたいます。|Uta wo utaimasu.|I sing a song.|Hiragana N5
+H|B|しゃしん を とります。|Shashin wo torimasu.|I take a photo.|Hiragana N5
+H|B|でんき を つけます。|Denki wo tsukemasu.|I turn on the light.|Hiragana N5
+H|B|でんき を けします。|Denki wo keshimasu.|I turn off the light.|Hiragana N5
+H|B|いす に すわります。|Isu ni suwarimasu.|I sit on the chair.|Hiragana N5
+H|B|あるきます。|Arukimasu.|I walk.|Hiragana N5
+H|B|はしります。|Hashirimasu.|I run.|Hiragana N5
+H|B|およぎます。|Oyogimasu.|I swim.|Hiragana N5
+H|B|えんぴつ で かきます。|Enpitsu de kakimasu.|I write with a pencil.|Hiragana N5
+H|B|じしょ を つかいます。|Jisho wo tsukaimasu.|I use a dictionary.|Hiragana N5
+H|B|テスト が あります。|Tesuto ga arimasu.|There is a test.|Hiragana N5
+H|B|うみ に いきたい です。|Umi ni ikitai desu.|I want to go to the sea.|Hiragana N5
+H|B|にほんご が じょうずに なりたい です。|Nihongo ga jouzu ni naritai desu.|I want to become good at Japanese.|Hiragana N5
+H|B|まいにち すこし ずつ べんきょう します。|Mainichi sukoshi zutsu benkyou shimasu.|I study a little every day.|Hiragana N5
+H|B|がんばります！|Ganbarimasu!|I will do my best!|Hiragana N5
+H|B|せんせいが きます。|Sensei ga kimasu.|The teacher is coming.|Hiragana N5
+H|B|きょうかしょを あけてください。|Kyoukasho wo akete kudasai.|Please open your textbook.|Hiragana N5
+H|B|もういちど いってください。|Mou ichido itte kudasai.|Please say it one more time.|Hiragana N5
+H|B|わかりません。|Wakarimasen.|I don't understand.|Hiragana N5
+H|B|しつもんが あります。|Shitsumon ga arimasu.|I have a question.|Hiragana N5
+H|B|にほんごで なんといいますか。|Nihongo de nan to iimasu ka.|How do you say it in Japanese?|Hiragana N5
+H|B|これを ください。|Kore wo kudasai.|Please give me this.|Hiragana N5
+H|B|いくらですか。|Ikura desu ka.|How much is it?|Hiragana N5
+H|B|たかいですね。|Takai desu ne.|It's expensive, isn't it.|Hiragana N5
+H|B|やすいです。|Yasui desu.|It's cheap.|Hiragana N5
+H|B|おつりを ください。|Otsuri wo kudasai.|Please give me the change.|Hiragana N5
+H|B|おいしいです。|Oishii desu.|It is delicious.|Hiragana N5
+H|B|からいです。|Karai desu.|It is spicy.|Hiragana N5
+H|B|あまいです。|Amai desu.|It is sweet.|Hiragana N5
+H|B|ごちそうさまでした。|Gochisousama deshita.|Thank you for the meal.|Hiragana N5
+H|B|いただきます。|Itadakimasu.|I humbly receive this meal.|Hiragana N5
+H|B|さかなが すきです。|Sakana ga suki desu.|I like fish.|Hiragana N5
+H|B|にくが すきです。|Niku ga suki desu.|I like meat.|Hiragana N5
+H|B|やさいが すきです。|Yasai ga suki desu.|I like vegetables.|Hiragana N5
+H|B|えきは どこですか。|Eki wa doko desu ka.|Where is the station?|Hiragana N5
+H|B|まっすぐ いってください。|Massugu itte kudasai.|Please go straight.|Hiragana N5
+H|B|みぎに まがってください。|Migi ni magatte kudasai.|Please turn right.|Hiragana N5
+H|B|ひだりに まがってください。|Hidari ni magatte kudasai.|Please turn left.|Hiragana N5
+H|B|きっぷを かいます。|Kippu wo kaimasu.|I buy a ticket.|Hiragana N5
+H|B|ホテルは どこですか。|Hoteru wa doko desu ka.|Where is the hotel?|Hiragana N5
+H|B|あめが ふっています。|Ame ga futte imasu.|It is raining.|Hiragana N5
+H|B|ゆきが ふっています。|Yuki ga futte imasu.|It is snowing.|Hiragana N5
+H|B|くもっています。|Kumotte imasu.|It is cloudy.|Hiragana N5
+H|B|うみが きれいです。|Umi ga kirei desu.|The sea is beautiful.|Hiragana N5
+H|B|やまが たかいです。|Yama ga takai desu.|The mountains are tall.|Hiragana N5
+H|B|にじが でました。|Niji ga demashita.|A rainbow appeared.|Hiragana N5
+H|B|あたまが いたいです。|Atama ga itai desu.|I have a headache.|Hiragana N5
+H|B|おなかが いたいです。|Onaka ga itai desu.|I have a stomachache.|Hiragana N5
+H|B|かぜを ひきました。|Kaze wo hikimashita.|I caught a cold.|Hiragana N5
+H|B|くすりを のみます。|Kusuri wo nomimasu.|I take medicine.|Hiragana N5
+H|B|ねつが あります。|Netsu ga arimasu.|I have a fever.|Hiragana N5
+H|B|うんどうが たいせつです。|Undou ga taisetsu desu.|Exercise is important.|Hiragana N5
+H|B|からだに いいです。|Karada ni ii desu.|It is good for the body.|Hiragana N5
+H|B|すいみんは じゅうようです。|Suimin wa juuyou desu.|Sleep is important.|Hiragana N5
+H|B|いま なんじですか。|Ima nanji desu ka.|What time is it now?|Hiragana N5
+H|B|きのう がっこうに いきました。|Kinou gakkou ni ikimashita.|Yesterday I went to school.|Hiragana N5
+H|B|あした がっこうに いきます。|Ashita gakkou ni ikimasu.|Tomorrow I go to school.|Hiragana N5
+H|B|まいにち れんしゅうします。|Mainichi renshuu shimasu.|I practice every day.|Hiragana N5
+H|B|はやおきは さんもんの とく。|Hayaoki wa sanmon no toku.|The early bird catches the worm.|Hiragana N5
+H|B|ちりも つもれば やまと なる。|Chiri mo tsumoreba yama to naru.|Even dust piled up becomes a mountain.|Hiragana N5
+H|B|いそがば まわれ。|Isogaba maware.|Haste makes waste.|Hiragana N5
+H|B|さるも きから おちる。|Saru mo ki kara ochiru.|Even monkeys fall from trees.|Hiragana N5
+H|B|わらう かどには ふく きたる。|Warau kado ni wa fuku kitaru.|Fortune comes to a smiling home.|Hiragana N5
+H|B|じゅうにん といろ。|Juunin toiro.|To each their own.|Hiragana N5
+H|B|なせばなる。|Naseba naru.|Where there's a will there's a way.|Hiragana N5
+H|I|わたしが こどものころ、まいにち こうえんで あそんでいました。\nともだちと おにごっこ や かくれんぼ を よく しました。\nあのころは なにも しんぱい が なくて、たのしかったです。|Watashi ga kodomo no koro, mainichi kouen de asonde imashita.\nTomodachi to onigokko ya kakurenbo wo yoku shimashita.\nAno koro wa nani mo shinpai ga nakute, tanoshikatta desu.|When I was a child I played in the park every day.\nI often played tag and hide-and-seek with friends.\nBack then I had no worries and it was fun.|Hiragana N4
+H|I|はるに なると さくら が さきます。\nこうえん で はなみ を する ひとが おおくなります。\nにほんじん は はな を みながら おべんとう を たべます。|Haru ni naru to sakura ga sakimasu.\nKouen de hanami wo suru hito ga ooku narimasu.\nNihonjin wa hana wo minagara obentou wo tabemasu.|When spring comes the cherry blossoms bloom.\nMore people have flower-viewing parties in the park.\nJapanese people eat boxed lunches while viewing the flowers.|Hiragana N4
+H|I|りょこうに いくときは、まず けいかく を たてます。\nどこに いくか、なにを するか を きめます。\nそれから、ひこうきや ホテル の よやく を します。|Ryokou ni iku toki wa, mazu keikaku wo tatemasu.\nDoko ni iku ka, nani wo suru ka wo kimemasu.\nSore kara, hikouki ya hoteru no yoyaku wo shimasu.|When going on a trip I first make a plan.\nI decide where to go and what to do.\nThen I make reservations for flights and hotels.|Hiragana N4
+H|I|にほんごを まなぶ りゆう は たくさん あります。\nにほんの ぶんか が すきだから まなぶ ひと も います。\nしごとの ために まなぶ ひと も います。|Nihongo wo manabu riyuu wa takusan arimasu.\nNihon no bunka ga suki dakara manabu hito mo imasu.\nShigoto no tame ni manabu hito mo imasu.|There are many reasons to learn Japanese.\nSome people learn because they like Japanese culture.\nSome people learn for work reasons.|Hiragana N4
+H|I|あさおきたら、まず かおを あらいます。\nつぎに あさごはんを たべます。\nそして はを みがいてから がっこうに いきます。|Asa okitara, mazu kao wo araimasu.\nTsugi ni asagohan wo tabemasu.\nSoshite ha wo migaite kara gakkou ni ikimasu.|When I wake up in the morning I first wash my face.\nThen I eat breakfast.\nAfter brushing my teeth I go to school.|Hiragana N4
+H|I|ともだちの たんじょうびに プレゼントを おくりました。\nかのじょは とても よろこんでくれました。\nわたしも うれしかったです。|Tomodachi no tanjoubi ni purezento wo okurimashita.\nKanojo wa totemo yorokonde kuremashita.\nWatashi mo ureshikatta desu.|I sent a present for my friend's birthday.\nShe was very happy.\nI was happy too.|Hiragana N4
+H|I|まいにち にほんごの たんごを じゅっこ おぼえます。\nいちねん で さんぜんろっぴゃっこ おぼえられます。\nちょっとずつ つみかさねる ことが だいじです。|Mainichi nihongo no tango wo jukko oboemasu.\nIchinen de sanzen roppyakko oboeraremasu.\nChotto zutsu tsumikasaneru koto ga daiji desu.|I memorize ten Japanese words every day.\nIn one year I can memorize 3600 words.\nAccumulating little by little is important.|Hiragana N4
+H|I|にほんでは くつを ぬいで いえに はいります。\nそのため げんかんという ばしょが あります。\nこれは にほんの たいせつな ぶんかです。|Nihon de wa kutsu wo nuide ie ni hairimasu.\nSono tame genkan to iu basho ga arimasu.\nKore wa Nihon no taisetsu na bunka desu.|In Japan you take off your shoes before entering a house.\nFor that reason there is a place called the entryway.\nThis is an important part of Japanese culture.|Hiragana N4
+H|I|わたしの しゅみは りょうりを つくる ことです。\nまいしゅうまつ あたらしい りょうりに ちょうせんします。\nせんしゅうは カレーライスを つくりました。|Watashi no shumi wa ryouri wo tsukuru koto desu.\nMaishuu matsu atarashii ryouri ni chousen shimasu.\nSenshuu wa karee raisu wo tsukurimashita.|My hobby is cooking.\nEvery weekend I challenge myself to make a new dish.\nLast week I made curry rice.|Hiragana N4
+H|I|しんかんせん は とても はやい でんしゃです。\nとうきょうから おおさかまで やく にじかん はんで いけます。\nにほんの でんしゃは じかんに せいかく です。|Shinkansen wa totemo hayai densha desu.\nToukyou kara Oosaka made yaku nijikan han de ikemasu.\nNihon no densha wa jikan ni seikaku desu.|The shinkansen is a very fast train.\nYou can get from Tokyo to Osaka in about two and a half hours.\nJapanese trains are very punctual.|Hiragana N4
+H|I|にほんでは おしょうがつに いろいろな しゅうかんが あります。\nおとしだまを もらったり、はつもうでに いったり します。\nかぞくが あつまって あたたかい じかんを すごします。|Nihon de wa oshougatsu ni iroiro na shuukan ga arimasu.\nOtoshidama wo morattari, hatsumoudee ni ittari shimasu.\nKazoku ga atsumatte atatakai jikan wo sugoshimasu.|At New Year in Japan there are various customs.\nYou receive New Year's money and visit shrines.\nFamilies gather and spend warm time together.|Hiragana N4
+H|I|むかし むかし、あるところに おじいさんと おばあさんが いました。\nかわで おおきな ももが ながれてきました。\nなかから かわいい おとこのこが でてきました。|Mukashi mukashi, aru tokoro ni ojiisan to obaasan ga imashita.\nKawa de ooki na momo ga nagarete kimashita.\nNaka kara kawaii otoko no ko ga dete kimashita.|Long long ago in a certain place lived an old man and woman.\nA big peach came floating down the river.\nFrom inside a cute boy appeared.|Hiragana N4
+H|I|にほんごを まなびはじめて もう いちねんに なります。\nはじめは ひらがなも むずかしかったのに、\nいまでは かんたんな かいわが できるように なりました。|Nihongo wo manabi hajimete mou ichinen ni narimasu.\nHajime wa hiragana mo muzukashikatta no ni,\nima de wa kantan na kaiwa ga dekiru you ni narimashita.|It has already been one year since I started learning Japanese.\nEven though hiragana was difficult at first,\nI have become able to have simple conversations.|Hiragana N4
+H|I|にほんの なつは とても むしあつい です。\nほとんど まいにち あめが ふって、きおんも たかいです。\nそんな なつでも、まつりや はなびで にぎわいます。|Nihon no natsu wa totemo mushiatsui desu.\nHotondo mainichi ame ga futte, kion mo takai desu.\nSonna natsu demo, matsuri ya hanabi de nigawimasu.|Summer in Japan is very hot and humid.\nIt rains almost every day and the temperature is high.\nEven in such a summer it is lively with festivals and fireworks.|Hiragana N4
+H|I|やまのぼりが すきです。\nてっぺんから みる けしきは とても きれいです。\nつかれるけど、それ いじょうの かちが あります。|Yamanobori ga suki desu.\nTeppan kara miru keshiki wa totemo kirei desu.\nTsukareru kedo, sore ijou no kachi ga arimasu.|I like mountain climbing.\nThe scenery from the summit is very beautiful.\nIt is tiring but it's worth more than that.|Hiragana N4
+H|I|おばあちゃんの りょうりは せかいいちです。\nとくに みそしるは からだに しみわたるような あじがします。\nいつ たべても なつかしい きもちになります。|Obaachan no ryouri wa sekai ichi desu.\nToku ni misoshiru wa karada ni shimiwataru you na aji ga shimasu.\nItsu tabete mo natsukashii kimochi ni narimasu.|Grandma's cooking is the best in the world.\nEspecially the miso soup has a flavor that permeates the body.\nWhenever I eat it I feel nostalgic.|Hiragana N4
+H|I|わたしの いちにちは こうです。\nあさ ろくじに おきて、かおを あらいます。\nそれから あさごはんを たべて、でんしゃで かいしゃに いきます。\nよる しちじに うちに かえります。|Watashi no ichinichi wa kou desu.\nAsa rokuji ni okite, kao wo araimasu.\nSore kara asagohan wo tabete, densha de kaisha ni ikimasu.\nYoru shichiji ni uchi ni kaerimasu.|My day goes like this.\nI wake up at six and wash my face.\nThen I eat breakfast and go to the company by train.\nI return home at seven in the evening.|Hiragana N4
+H|A|にんげん は あやまち を おかすいきものですが、\nそれを みとめて まえに すすめる ことが せいちょう につながります。\nしっぱいを おそれず ちゃれんじし つづけることが じゅうようです。|Ningen wa ayamachi wo okasu ikimono desu ga,\nsore wo mitomete mae ni susumeru koto ga seichou ni tsunagarimasu.\nShippai wo oserezu charenji shi tsuzukeru koto ga juuyou desu.|Humans are creatures that make mistakes,\nbut acknowledging them and moving forward leads to growth.\nIt is important to keep challenging without fearing failure.|Hiragana advanced
+H|A|ことばを まなぶ ことは、たんに たんご や ぶんぽうを しる だけでなく、\nその ことばを はなす ひとびとの ぶんかを りかいする ことでも あります。\nそれゆえ、がいこくごの がくしゅうは じぶんの せかいを ひろげます。|Kotoba wo manabu koto wa, tan ni tango ya bunpou wo shiru dake de naku,\nsono kotoba wo hanasu hitobito no bunka wo rikai suru koto demo arimasu.\nSoreyue, gaikokugo no gakushuu wa jibun no sekai wo hirogemasu.|Learning a language is not just knowing words and grammar,\nbut also understanding the culture of those who speak it.\nTherefore learning a foreign language broadens your world.|Hiragana advanced
+H|A|わたしが にほんごを はじめて まなんだのは だいがくせいの ときでした。\nはじめは ひらがな すら かけなかったのに、\nいまでは にほんの ともだちと ふつうに はなせる ようになりました。\nつづけること の ちから を じつかんしています。|Watashi ga nihongo wo hajimete mananda no wa daigakusei no toki deshita.\nHajime wa hiragana sura kakenakatta no ni,\nima de wa Nihon no tomodachi to futsuu ni hanaseru you ni narimashita.\nTsuzukeru koto no chikara wo jikkan shite imasu.|I first started learning Japanese when I was a university student.\nAt first I couldn't even write hiragana,\nbut now I speak normally with Japanese friends.\nI feel the power of perseverance.|Hiragana advanced
+K|B|コーヒー ガ スキ デス。|Koohii ga suki desu.|I like coffee.|Katakana N5
+K|B|テレビ ヲ ミマス。|Terebi wo mimasu.|I watch television.|Katakana N5
+K|B|スマホ ヲ ツカイマス。|Sumaho wo tsukaimasu.|I use a smartphone.|Katakana N5
+K|B|パン ヲ タベマス。|Pan wo tabemasu.|I eat bread.|Katakana N5
+K|B|バス ニ ノリマス。|Basu ni norimasu.|I ride the bus.|Katakana N5
+K|B|ホテル ニ トマリマス。|Hoteru ni tomarimasu.|I stay at a hotel.|Katakana N5
+K|B|レストラン デ タベマス。|Resutoran de tabemasu.|I eat at a restaurant.|Katakana N5
+K|B|アイスクリーム ガ スキ デス。|Aisukuriimu ga suki desu.|I like ice cream.|Katakana N5
+K|B|ケーキ ヲ タベマシタ。|Keeki wo tabemashita.|I ate cake.|Katakana N5
+K|B|コーラ ヲ ノミマス。|Koora wo nomimasu.|I drink cola.|Katakana N5
+K|B|ジュース ヲ ノミマス。|Juusu wo nomimasu.|I drink juice.|Katakana N5
+K|B|ピザ ガ オイシイ デス。|Piza ga oishii desu.|Pizza is delicious.|Katakana N5
+K|B|ハンバーガー ヲ タベマス。|Hanbaagaa wo tabemasu.|I eat a hamburger.|Katakana N5
+K|B|アメリカ カラ キマシタ。|Amerika kara kimashita.|I came from America.|Katakana N5
+K|B|フランス ニ イキタイ デス。|Furansu ni ikitai desu.|I want to go to France.|Katakana N5
+K|B|イタリア ノ リョウリ ガ スキ デス。|Itaria no ryouri ga suki desu.|I like Italian cuisine.|Katakana N5
+K|B|チョコレート ガ ダイスキ デス。|Chokoreeto ga daisuki desu.|I love chocolate.|Katakana N5
+K|B|スーパー デ カイモノ シマス。|Suupaa de kaimono shimasu.|I shop at the supermarket.|Katakana N5
+K|B|パソコン ヲ ツカイマス。|Pasokon wo tsukaimasu.|I use a personal computer.|Katakana N5
+K|B|ゲーム ヲ シマス。|Geemu wo shimasu.|I play games.|Katakana N5
+K|B|スポーツ ガ スキ デス。|Supootsu ga suki desu.|I like sports.|Katakana N5
+K|B|テニス ヲ シマス。|Tenisu wo shimasu.|I play tennis.|Katakana N5
+K|B|サッカー ガ スキ デス。|Sakkaa ga suki desu.|I like soccer.|Katakana N5
+K|B|プール デ オヨギマス。|Puuru de oyogimasu.|I swim in the pool.|Katakana N5
+K|B|ジム ニ イキマス。|Jimu ni ikimasu.|I go to the gym.|Katakana N5
+K|B|カメラ デ シャシン ヲ トリマス。|Kamera de shashin wo torimasu.|I take photos with a camera.|Katakana N5
+K|B|ギター ヲ ヒキマス。|Gitaa wo hikimasu.|I play guitar.|Katakana N5
+K|B|ピアノ ヲ ヒキマス。|Piano wo hikimasu.|I play piano.|Katakana N5
+K|B|コンサート ニ イキマス。|Konsaato ni ikimasu.|I go to a concert.|Katakana N5
+K|B|アパート ニ スンデ イマス。|Apaato ni sunde imasu.|I live in an apartment.|Katakana N5
+K|B|シャワー ヲ アビマス。|Shawaa wo abimasu.|I take a shower.|Katakana N5
+K|B|カフェ デ ノミモノ ヲ ノミマス。|Kafe de nomimono wo nomimasu.|I drink a beverage at the café.|Katakana N5
+K|B|ケーキ ト コーヒー ヲ タノミマス。|Keeki to koohii wo tanomimasu.|I order cake and coffee.|Katakana N5
+K|B|チキン ガ スキ デス。|Chikin ga suki desu.|I like chicken.|Katakana N5
+K|B|マクドナルド デ ハンバーガー ヲ タベマス。|Makudonarudo de hanbaagaa wo tabemasu.|I eat a hamburger at McDonald's.|Katakana N5
+K|B|スターバックス デ ラテ ヲ ノミマス。|Sutaabakkusu de rate wo nomimasu.|I drink a latte at Starbucks.|Katakana N5
+K|B|ウォーキング ヲ シマス。|Wookingu wo shimasu.|I go walking.|Katakana N5
+K|B|キャンプ ニ イキマシタ。|Kyanpu ni ikimashita.|I went camping.|Katakana N5
+K|B|カラオケ ニ イキマス。|Karaoke ni ikimasu.|I go to karaoke.|Katakana N5
+K|B|スキー ニ イキタイ デス。|Sukii ni ikitai desu.|I want to go skiing.|Katakana N5
+K|B|サーフィン ガ スキ デス。|Saafin ga suki desu.|I like surfing.|Katakana N5
+K|B|ゴルフ ヲ シマス。|Gorufu wo shimasu.|I play golf.|Katakana N5
+K|B|ランチ ニ パスタ ヲ タベマシタ。|Ranchi ni pasuta wo tabemashita.|I ate pasta for lunch.|Katakana N5
+K|B|ディナー ハ シーフード デシタ。|Dinaa wa shiifuudo deshita.|Dinner was seafood.|Katakana N5
+K|B|コンビニ デ オニギリ ヲ カイマシタ。|Konbini de onigiri wo kaimashita.|I bought a rice ball at the convenience store.|Katakana N5
+K|B|メニュー ヲ ミマス。|Menyuu wo mimasu.|I look at the menu.|Katakana N5
+K|B|バドミントン ガ スキ デス。|Badominton ga suki desu.|I like badminton.|Katakana N5
+K|B|ネットフリックス デ ドラマ ヲ ミテ イマス。|Nettofurikkusu de dorama wo mite imasu.|I am watching dramas on Netflix.|Katakana N5
+K|B|アプリ デ タクシー ヲ ヨビマシタ。|Apuri de takushii wo yobimashita.|I called a taxi using an app.|Katakana N5
+K|B|インターネット ヲ シラベマス。|Intaanetto wo shirabemasu.|I look things up on the internet.|Katakana N5
+K|B|ランチ ハ サンドイッチ デス。|Ranchi wa sandoicchi desu.|Lunch is a sandwich.|Katakana N5
+K|I|コノ レストラン ノ スペシャリテ ハ パスタ デス。\nシェフ ハ イタリア デ トレーニング シマシタ。\nメニュー ニ ベジタリアン オプション モ アリマス。|Kono resutoran no supesharite wa pasuta desu.\nShefu wa Itaria de toreeningen shimashita.\nMenyuu ni bejitarian opushon mo arimasu.|This restaurant's specialty is pasta.\nThe chef trained in Italy.\nThere are also vegetarian options on the menu.|Katakana intermediate
+K|I|テクノロジー ノ ハッタツ ニ ヨッテ、\nセカイ ハ チイサク ナリマシタ。\nビデオ コール デ セカイジュウ ノ ヒト ト ハナセマス。|Tekunorojii no hattatsu ni yotte,\nsekai wa chiisaku narimashita.\nBideo kooru de sekaijuu no hito to hanasemasu.|Due to technological advances the world has become smaller.\nYou can talk with people all over the world via video call.|Katakana intermediate
+K|I|グローバル ナ ビジネス デ エイゴ ハ ヒッス デス。\nシゴト ノ メール ハ エイゴ デ カキマス。\nプレゼンテーション モ エイゴ デ シマス。|Guroobal na bijinesu de eigo wa hissu desu.\nShigoto no meeru wa eigo de kakimasu.\nPurezenteeishon mo eigo de shimasu.|English is essential in global business.\nI write work emails in English.\nI also do presentations in English.|Katakana intermediate
+K|I|ヨーロッパ ヲ リョコウ シマシタ。\nフランス ト イタリア ト ドイツ ヲ タビシマシタ。\nドコモ ステキ ナ ブンカ ガ アリマシタ。|Yooroppa wo ryokou shimashita.\nFuransu to Itaria to Doitsu wo tabi shimashita.\nDoko mo suteki na bunka ga arimashita.|I traveled through Europe.\nI traveled to France, Italy, and Germany.\nEvery place had wonderful culture.|Katakana intermediate
+K|I|スポーツ ジム デ トレーニング シテ イマス。\nマイニチ サンジュップン ウンドウ シマス。\nケンコウ ノ タメ ニ ダイジ ナ コト デス。|Supootsu jimu de toreeningen shite imasu.\nMainichi sanjuppun undou shimasu.\nKenkou no tame ni daiji na koto desu.|I am training at a sports gym.\nI exercise for thirty minutes every day.\nIt is important for my health.|Katakana intermediate
+K|I|ビジネスクラス デ フライト シマシタ。\nシート ガ ヒロクテ ユッタリ シテ イマシタ。\nサービス モ サイコウ デシタ。|Bijinesu kurasu de furaito shimashita.\nShiito ga hirokute yuttari shite imashita.\nSaabisu mo saikou deshita.|I flew in business class.\nThe seat was spacious and comfortable.\nThe service was also the best.|Katakana intermediate
+K|I|プログラミング ヲ ベンキョウ シテ イマス。\nオンライン コース ガ ベンリ デス。\nプロジェクト ヲ ジブン デ ツクリタイ デス。|Puroguramingu wo benkyou shite imasu.\nOnrain koosu ga benri desu.\nPurojekuto wo jibun de tsukuri tai desu.|I am studying programming.\nOnline courses are convenient.\nI want to create a project by myself.|Katakana intermediate
+K|I|アプリ デ フードデリバリー ヲ チュウモン シマシタ。\nサーティ ミニット デ トドキマシタ。\nアツアツ デ オイシカッタ デス。|Apuri de fuudo deribarii wo chuumon shimashita.\nSaatii minitto de todokimashita.\nAtsuatsu de oishikatta desu.|I ordered food delivery through an app.\nIt arrived in thirty minutes.\nIt was piping hot and delicious.|Katakana intermediate
+K|I|コンビニ デ コーヒー ト サンドイッチ ヲ カイマシタ。\nランチ ハ イツモ コンビニ デス。\nカイシャ ノ チカク ニ アル カラ ベンリ デス。|Konbini de koohii to sandoicchi wo kaimashita.\nRanchi wa itsumo konbini desu.\nKaisha no chikaku ni aru kara benri desu.|I bought coffee and a sandwich at the convenience store.\nLunch is always at the convenience store.\nIt's convenient because it's near the office.|Katakana intermediate
+K|I|スマートフォン ノ アプリ ヲ ツカッテ、\nナビゲーション ヲ シラベマシタ。\nオンライン ショッピング モ ベンリ デス。|Sumaatofon no apuri wo tsukatte,\nnabigeeishon wo shirabemashita.\nOnrain shoppingu mo benri desu.|Using a smartphone app I looked up the navigation.\nOnline shopping is also convenient.|Katakana intermediate
+K|A|グローバリゼーション ガ スンム ナカ デ、\nナショナル アイデンティティ ヲ タモツ コト ノ ジュウヨウセイ ガ\nサイニン シキ サレテ イマス。\nブンカ ノ タヨウセイ ヲ ソンチョウ スル コト ガ ヒツヨウ デス。|Gurobarizeeishon ga susumu naka de,\nnashonaru aidentiti wo tamotsu koto no juuyousei ga\nsai ninshiki sarete imasu.\nBunka no tayousei wo sonchou suru koto ga hitsuyou desu.|As globalization advances the importance of maintaining national identity is being re-recognized.\nIt is necessary to respect cultural diversity.|Katakana advanced
+K|A|デジタル トランスフォーメーション ハ\nビジネス ノ アラユル セクター ニ エイキョウ シテ イマス。\nアーティフィシャル インテリジェンス ノ カツヨウ ニ ヨッテ、\nサギョウ ノ コウリツカ ガ ハカラレテ イマス。|Dejitaru toransufooomeeshon wa\nbijinesu no arayuru sekutaa ni eikyou shite imasu.\nAaatifisharu intarijiensu no katsuyou ni yotte,\nsagyou no kouritsu-ka ga hakaraete imasu.|Digital transformation is affecting every sector of business.\nThrough AI utilization, operational efficiency is being pursued.|Katakana advanced
+M|B|きょうは スーパーで かいものを しました。\nリンゴと バナナを かいました。\nとても おいしそうです。|Kyou wa suupaa de kaimono wo shimashita.\nRingo to banana wo kaimashita.\nTotemo oishisou desu.|Today I went shopping at the supermarket.\nI bought apples and bananas.\nThey look very delicious.|Mixed N5
+M|B|わたしの すきな たべものは ピザです。\nチーズが たくさん はいっています。\nイタリアりょうりが だいすきです。|Watashi no sukina tabemono wa piza desu.\nChiizu ga takusan haitte imasu.\nItaria ryouri ga daisuki desu.|My favorite food is pizza.\nIt has lots of cheese.\nI love Italian food.|Mixed N5
+M|B|まいあさ コーヒーを のみます。\nコーヒーは ブラックが すきです。\nさとうも ミルクも いれません。|Mai asa koohii wo nomimasu.\nKoohii wa burakku ga suki desu.\nSatou mo miruku mo iremasen.|I drink coffee every morning.\nI like black coffee.\nI don't add sugar or milk.|Mixed N5
+M|B|テレビで ニュースを みます。\nまいにち よるに みます。\nせかいの できごとを しります。|Terebi de nyuusu wo mimasu.\nMainichi yoru ni mimasu.\nSekai no dekigoto wo shirimasu.|I watch the news on TV.\nI watch it every evening.\nI learn about world events.|Mixed N5
+M|B|スマートフォンで しゃしんを とります。\nインスタグラムに のせます。\nともだちが コメントを してくれます。|Sumaatofon de shashin wo torimasu.\nInsutagurama ni nosemasu.\nTomodachi ga komento wo shite kuremasu.|I take photos with my smartphone.\nI post them on Instagram.\nFriends leave comments for me.|Mixed N5
+M|B|ゲームが すきです。\nまいにち いちじかん ゲームを します。\nロールプレイングゲームが とくに すきです。|Geemu ga suki desu.\nMainichi ichijikan geemu wo shimasu.\nRooru pureingu geemu ga toku ni suki desu.|I like games.\nI play games for one hour every day.\nI especially like role-playing games.|Mixed N5
+M|B|カフェで ともだちと はなします。\nコーヒーと ケーキを たのみます。\nたのしい じかんです。|Kafe de tomodachi to hanashimasu.\nKoohii to keeki wo tanomimasu.\nTanoshii jikan desu.|I talk with friends at the café.\nI order coffee and cake.\nIt's a fun time.|Mixed N5
+M|B|パソコンで しごとを します。\nメールを かきます。\nレポートも つくります。|Pasokon de shigoto wo shimasu.\nMeeru wo kakimasu.\nRepooto mo tsukurimasu.|I work on my computer.\nI write emails.\nI also create reports.|Mixed N5
+M|B|スポーツが すきです。\nサッカーと バスケットボールを します。\nうんどうは からだに いいです。|Supootsu ga suki desu.\nSakkaa to basukettoboru wo shimasu.\nUndou wa karada ni ii desu.|I like sports.\nI play soccer and basketball.\nExercise is good for the body.|Mixed N5
+M|B|ミュージックを ききながら べんきょうします。\nクラシックが すきです。\nこころが おちつきます。|Myuujikku wo kikinagara benkyou shimasu.\nKurashikku ga suki desu.\nKokoro ga ochitsukimasu.|I study while listening to music.\nI like classical music.\nIt calms my heart.|Mixed N5
+M|B|コンビニで おにぎりを かいました。|Konbini de onigiri wo kaimashita.|I bought a rice ball at the convenience store.|Mixed N5
+M|B|ラーメンが だいすきです。|Raamen ga daisuki desu.|I love ramen.|Mixed N5
+M|B|サラダを たべます。|Sarada wo tabemasu.|I eat a salad.|Mixed N5
+M|B|スープが あたたかいです。|Suupu ga atatakai desu.|The soup is warm.|Mixed N5
+M|B|インターネットで しらべます。\nわからない ことばを さがします。\nべんりな じだいですね。|Intaanetto de shirabemasu.\nWakaranai kotoba wo sagashimasu.\nBenri na jidai desu ne.|I look things up on the internet.\nI search for words I don't understand.\nWhat a convenient era.|Mixed N5

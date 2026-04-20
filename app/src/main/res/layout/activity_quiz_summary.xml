@@ -1,8 +1,11 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBackground"
+    android:fitsSystemWindows="true"
     android:fillViewport="true">
 
     <LinearLayout
@@ -10,16 +13,18 @@
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:orientation="vertical"
-        android:padding="32dp">
+        android:paddingStart="28dp"
+        android:paddingEnd="28dp"
+        android:paddingBottom="40dp">
 
         <!-- Grade Circle -->
         <com.google.android.material.card.MaterialCardView
-            android:layout_width="140dp"
-            android:layout_height="140dp"
-            android:layout_marginTop="48dp"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            android:layout_marginTop="56dp"
             app:cardBackgroundColor="@color/colorPrimary"
-            app:cardCornerRadius="70dp"
-            app:cardElevation="8dp">
+            app:cardCornerRadius="65dp"
+            app:cardElevation="6dp">
 
             <TextView
                 android:id="@+id/textGrade"
@@ -28,59 +33,57 @@
                 android:gravity="center"
                 android:text="A"
                 android:textColor="@color/colorOnPrimary"
-                android:textSize="64sp"
+                android:textSize="60sp"
                 android:textStyle="bold" />
 
         </com.google.android.material.card.MaterialCardView>
 
-        <!-- Quiz Type -->
         <TextView
             android:id="@+id/textQuizType"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="20dp"
             android:text="Quiz Complete"
             android:textColor="@color/colorOnBackground"
-            android:textSize="24sp"
+            android:textSize="22sp"
             android:textStyle="bold" />
 
-        <!-- Percentage -->
         <TextView
             android:id="@+id/textPercentage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="6dp"
             android:text="0%"
             android:textColor="@color/colorPrimary"
-            android:textSize="36sp"
+            android:textSize="34sp"
             android:textStyle="bold" />
 
-        <!-- Stats Cards Row -->
+        <!-- Stats Row -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="28dp"
             android:orientation="horizontal"
             android:gravity="center">
 
-            <!-- Correct Card -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_marginEnd="6dp"
+                android:layout_marginEnd="5dp"
                 app:cardBackgroundColor="@color/colorSurface"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="0dp"
                 app:strokeColor="@color/colorCorrect"
-                app:strokeWidth="2dp">
+                app:strokeWidth="1.5dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:orientation="vertical"
-                    android:padding="16dp">
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp">
 
                     <TextView
                         android:id="@+id/textCorrectCount"
@@ -88,7 +91,7 @@
                         android:layout_height="wrap_content"
                         android:text="0"
                         android:textColor="@color/colorCorrect"
-                        android:textSize="28sp"
+                        android:textSize="26sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -96,31 +99,31 @@
                         android:layout_height="wrap_content"
                         android:text="Correct"
                         android:textColor="@color/colorOnBackgroundSecondary"
-                        android:textSize="12sp" />
+                        android:textSize="11sp" />
 
                 </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- Wrong Card -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_marginStart="6dp"
-                android:layout_marginEnd="6dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
                 app:cardBackgroundColor="@color/colorSurface"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="0dp"
                 app:strokeColor="@color/colorIncorrect"
-                app:strokeWidth="2dp">
+                app:strokeWidth="1.5dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:orientation="vertical"
-                    android:padding="16dp">
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp">
 
                     <TextView
                         android:id="@+id/textWrongCount"
@@ -128,7 +131,7 @@
                         android:layout_height="wrap_content"
                         android:text="0"
                         android:textColor="@color/colorIncorrect"
-                        android:textSize="28sp"
+                        android:textSize="26sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -136,30 +139,30 @@
                         android:layout_height="wrap_content"
                         android:text="Wrong"
                         android:textColor="@color/colorOnBackgroundSecondary"
-                        android:textSize="12sp" />
+                        android:textSize="11sp" />
 
                 </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- Streak Card -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:layout_marginStart="6dp"
+                android:layout_marginStart="5dp"
                 app:cardBackgroundColor="@color/colorSurface"
                 app:cardCornerRadius="16dp"
                 app:cardElevation="0dp"
                 app:strokeColor="@color/colorPrimary"
-                app:strokeWidth="2dp">
+                app:strokeWidth="1.5dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
                     android:orientation="vertical"
-                    android:padding="16dp">
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp">
 
                     <TextView
                         android:id="@+id/textBestStreak"
@@ -167,7 +170,7 @@
                         android:layout_height="wrap_content"
                         android:text="0"
                         android:textColor="@color/colorPrimary"
-                        android:textSize="28sp"
+                        android:textSize="26sp"
                         android:textStyle="bold" />
 
                     <TextView
@@ -175,7 +178,7 @@
                         android:layout_height="wrap_content"
                         android:text="Streak"
                         android:textColor="@color/colorOnBackgroundSecondary"
-                        android:textSize="12sp" />
+                        android:textSize="11sp" />
 
                 </LinearLayout>
 
@@ -187,11 +190,12 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/buttonRetry"
             android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:layout_marginTop="40dp"
+            android:layout_height="54dp"
+            android:layout_marginTop="36dp"
             android:text="Try Again"
             android:textColor="@color/colorOnPrimary"
-            android:textSize="16sp"
+            android:textSize="15sp"
+            android:letterSpacing="0.02"
             app:backgroundTint="@color/colorPrimary"
             app:cornerRadius="16dp" />
 
@@ -199,15 +203,16 @@
             android:id="@+id/buttonHome"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:layout_marginTop="12dp"
+            android:layout_height="54dp"
+            android:layout_marginTop="10dp"
             android:text="Back to Home"
             android:textColor="@color/colorPrimary"
-            android:textSize="16sp"
+            android:textSize="15sp"
+            android:letterSpacing="0.02"
             app:cornerRadius="16dp"
-            app:strokeColor="@color/colorPrimary"
-            app:strokeWidth="2dp" />
+            app:strokeColor="@color/colorCardStroke"
+            app:strokeWidth="1.5dp" />
 
     </LinearLayout>
 
-</ScrollView>
+</androidx.core.widget.NestedScrollView>

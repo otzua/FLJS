@@ -5,14 +5,13 @@ import android.animation.AnimatorListenerAdapter;
 import android.animation.ObjectAnimator;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.google.android.material.button.MaterialButton;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
 
@@ -25,40 +24,23 @@ public class ReadingActivity extends AppCompatActivity {
     public static final String EXTRA_SCRIPT = "com.pikamander2.japanesequizz.READING_SCRIPT";
 
     private ReadingPassage.Script currentScript;
-    private List<ReadingPassage>  passagePool = new ArrayList<>();
-    private int                   poolIndex   = 0;
+    private List<ReadingPassage> passagePool = new ArrayList<>();
+    private int poolIndex = 0;
     private final Random random = new Random();
 
-    // Whether the user has revealed each layer
     private boolean romajiVisible  = false;
     private boolean englishVisible = false;
 
-    // Online vs offline source tracking
-    private boolean showingOnlinePassages = false;
+    private ReadingPassage.Difficulty selectedDifficulty = null;
 
-    // Views — passage card
-    private TextView  textPassage;
-    private TextView  textRomaji;
-    private TextView  textEnglish;
-    private TextView  textSource;
-    private TextView  textDifficulty;
-    private TextView  textCounter;
-    private View      cardPassage;
-
-    // Controls
-    private Button      btnRomaji;
-    private Button      btnEnglish;
-    private Button      btnNext;
-    private Button      btnFetchOnline;
-    private ProgressBar progressFetch;
-    private TextView    textFetchStatus;
-    private ChipGroup   chipGroupDifficulty;
-
-    private ReadingPassage.Difficulty selectedDifficulty = null; // null = show all
-
-    private PassageFetcher fetcher;
-
-    // ── Lifecycle ─────────────────────────────────────────────────────────────
+    // Views
+    private TextView textPassage, textRomaji, textEnglish,
+                     textSource, textDifficulty, textCounter;
+    private View     cardPassage;
+    private MaterialButton btnRomaji, btnEnglish, btnNext, btnFetchOnline;
+    private TextView        textFetchStatus;
+    private View            progressFetch;
+    private ChipGroup       chipGroupDifficulty;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,41 +59,29 @@ public class ReadingActivity extends AppCompatActivity {
 
         bindViews();
         setupDifficultyChips();
-        setupButtonListeners();
+        setupButtons();
 
-        fetcher = new PassageFetcher();
-
-        // Load offline passages immediately so the screen is never empty
-        loadOfflinePassages();
+        // Load from local library immediately
+        loadLocalPassages();
         showCurrentPassage();
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        if (fetcher != null) fetcher.shutdown();
-    }
-
-    // ── View binding ──────────────────────────────────────────────────────────
-
     private void bindViews() {
-        cardPassage         = findViewById(R.id.cardPassage);
-        textPassage         = findViewById(R.id.textPassage);
-        textRomaji          = findViewById(R.id.textRomaji);
-        textEnglish         = findViewById(R.id.textEnglish);
-        textSource          = findViewById(R.id.textSource);
-        textDifficulty      = findViewById(R.id.textDifficulty);
-        textCounter         = findViewById(R.id.textCounter);
-        btnRomaji           = findViewById(R.id.btnRomaji);
-        btnEnglish          = findViewById(R.id.btnEnglish);
-        btnNext             = findViewById(R.id.btnNext);
-        btnFetchOnline      = findViewById(R.id.btnFetchOnline);
-        progressFetch       = findViewById(R.id.progressFetch);
-        textFetchStatus     = findViewById(R.id.textFetchStatus);
+        cardPassage     = findViewById(R.id.cardPassage);
+        textPassage     = findViewById(R.id.textPassage);
+        textRomaji      = findViewById(R.id.textRomaji);
+        textEnglish     = findViewById(R.id.textEnglish);
+        textSource      = findViewById(R.id.textSource);
+        textDifficulty  = findViewById(R.id.textDifficulty);
+        textCounter     = findViewById(R.id.textCounter);
+        btnRomaji       = findViewById(R.id.btnRomaji);
+        btnEnglish      = findViewById(R.id.btnEnglish);
+        btnNext         = findViewById(R.id.btnNext);
+        btnFetchOnline  = findViewById(R.id.btnFetchOnline);
+        progressFetch   = findViewById(R.id.progressFetch);
+        textFetchStatus = findViewById(R.id.textFetchStatus);
         chipGroupDifficulty = findViewById(R.id.chipGroupDifficulty);
     }
-
-    // ── Setup ─────────────────────────────────────────────────────────────────
 
     private void setupDifficultyChips() {
         chipGroupDifficulty.setOnCheckedStateChangeListener((group, checkedIds) -> {
@@ -119,103 +89,66 @@ public class ReadingActivity extends AppCompatActivity {
                 selectedDifficulty = null;
             } else {
                 int id = checkedIds.get(0);
-                if (id == R.id.chipBeginner)          selectedDifficulty = ReadingPassage.Difficulty.BEGINNER;
+                if      (id == R.id.chipBeginner)     selectedDifficulty = ReadingPassage.Difficulty.BEGINNER;
                 else if (id == R.id.chipIntermediate) selectedDifficulty = ReadingPassage.Difficulty.INTERMEDIATE;
                 else if (id == R.id.chipAdvanced)     selectedDifficulty = ReadingPassage.Difficulty.ADVANCED;
                 else                                  selectedDifficulty = null;
             }
-            // Re-filter the current pool (don't refetch online)
-            applyDifficultyFilter();
+            loadLocalPassages();
             showCurrentPassage();
         });
-
-        // Default: All levels
         Chip chipAll = findViewById(R.id.chipAll);
         chipAll.setChecked(true);
     }
 
-    private void setupButtonListeners() {
+    private void setupButtons() {
         btnRomaji.setOnClickListener(v  -> toggleRomaji());
         btnEnglish.setOnClickListener(v -> toggleEnglish());
         btnNext.setOnClickListener(v    -> nextPassage());
-        btnFetchOnline.setOnClickListener(v -> startOnlineFetch());
+
+        // "Fetch" button now shuffles the local library for a fresh random order
+        btnFetchOnline.setText("↺ Refresh");
+        btnFetchOnline.setOnClickListener(v -> {
+            loadLocalPassages();
+            if (passagePool.isEmpty()) {
+                Toast.makeText(this, "No passages for this selection.", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            // Jump to a random starting point for variety
+            poolIndex = random.nextInt(passagePool.size());
+            textFetchStatus.setVisibility(View.VISIBLE);
+            textFetchStatus.setText("✓ Showing " + passagePool.size() + " local passages");
+            progressFetch.setVisibility(View.GONE);
+            crossfadeToPassage(poolIndex);
+        });
+
+        // Hide unused progress bar
+        progressFetch.setVisibility(View.GONE);
+        textFetchStatus.setVisibility(View.GONE);
     }
 
-    // ── Offline library ───────────────────────────────────────────────────────
+    // ── Local library ─────────────────────────────────────────────────────────
 
-    private void loadOfflinePassages() {
-        passagePool = ReadingLibrary.getShuffled(currentScript, random);
-        poolIndex   = 0;
-        showingOnlinePassages = false;
-        applyDifficultyFilter();
-    }
-
-    /**
-     * Filter passagePool by selectedDifficulty in-place.
-     * When filtering, we re-load from the full library (offline) or the last
-     * fetched online batch, then apply the filter.
-     */
-    private void applyDifficultyFilter() {
-        if (selectedDifficulty == null) return;
-        List<ReadingPassage> filtered = new ArrayList<>();
-        for (ReadingPassage p : passagePool) {
-            if (p.difficulty == selectedDifficulty) filtered.add(p);
+    private void loadLocalPassages() {
+        if (selectedDifficulty != null) {
+            passagePool = LocalLibrary.getByScriptAndDifficulty(
+                    this, currentScript, selectedDifficulty, random);
+        } else {
+            passagePool = LocalLibrary.getByScript(this, currentScript, random);
         }
-        // If filter leaves nothing, keep the full pool rather than show "no results"
-        if (!filtered.isEmpty()) {
-            passagePool = filtered;
+        // Fallback to ReadingLibrary if local file has nothing for this combo
+        if (passagePool.isEmpty()) {
+            if (selectedDifficulty != null) {
+                passagePool = ReadingLibrary.getByScriptAndDifficulty(
+                        currentScript, selectedDifficulty);
+            } else {
+                passagePool = ReadingLibrary.getShuffled(currentScript, random);
+            }
         }
         poolIndex = 0;
     }
 
-    // ── Online fetch ──────────────────────────────────────────────────────────
-
-    private void startOnlineFetch() {
-        // Disable the button and show the spinner
-        btnFetchOnline.setEnabled(false);
-        btnFetchOnline.setText(R.string.btn_fetching);
-        progressFetch.setVisibility(View.VISIBLE);
-        textFetchStatus.setVisibility(View.VISIBLE);
-        textFetchStatus.setText(R.string.fetch_status_loading);
-
-        fetcher.fetch(currentScript, new PassageFetcher.FetchCallback() {
-            @Override
-            public void onSuccess(List<ReadingPassage> passages) {
-                showingOnlinePassages = true;
-
-                // Merge with offline passages so the pool stays rich
-                List<ReadingPassage> merged = new ArrayList<>(passages);
-                merged.addAll(ReadingLibrary.getShuffled(currentScript, random));
-                passagePool = merged;
-                poolIndex   = 0;
-
-                // Apply any active difficulty filter
-                if (selectedDifficulty != null) applyDifficultyFilter();
-
-                progressFetch.setVisibility(View.GONE);
-                textFetchStatus.setText(getString(R.string.fetch_status_done,
-                        passages.size()));
-
-                btnFetchOnline.setEnabled(true);
-                btnFetchOnline.setText(R.string.btn_fetch_online);
-
-                // Crossfade to the first new passage
-                crossfadeToPassage(0);
-            }
-
-            @Override
-            public void onError(String message) {
-                progressFetch.setVisibility(View.GONE);
-                textFetchStatus.setText(R.string.fetch_status_error);
-                btnFetchOnline.setEnabled(true);
-                btnFetchOnline.setText(R.string.btn_fetch_online);
-
-                Toast.makeText(ReadingActivity.this, message, Toast.LENGTH_LONG).show();
-            }
-        });
-    }
-
-    // ── Passage display ───────────────────────────────────────────────────────
+    // ── Display ───────────────────────────────────────────────────────────────
 
     private void showCurrentPassage() {
         if (passagePool == null || passagePool.isEmpty()) {
@@ -235,33 +168,26 @@ public class ReadingActivity extends AppCompatActivity {
         btnEnglish.setEnabled(true);
         btnNext.setEnabled(true);
 
-        // Reset reveal state on every new passage
         romajiVisible  = false;
         englishVisible = false;
         textRomaji.setVisibility(View.GONE);
         textEnglish.setVisibility(View.GONE);
         textSource.setVisibility(View.GONE);
-
         btnRomaji.setText(R.string.btn_show_romaji);
         btnEnglish.setText(R.string.btn_show_english);
 
-        ReadingPassage passage = passagePool.get(poolIndex);
+        ReadingPassage p = passagePool.get(poolIndex);
+        textPassage.setText(p.japanese);
+        textRomaji.setText(p.romaji.isEmpty() ? "(romaji not available)" : p.romaji);
+        textEnglish.setText(p.english);
+        textSource.setText(getString(R.string.source_label, p.source));
 
-        textPassage.setText(passage.japanese);
-        textRomaji.setText(passage.romaji);
-        textEnglish.setText(passage.english);
-        textSource.setText(getString(R.string.source_label, passage.source));
-
-        // Difficulty badge
         textDifficulty.setVisibility(View.VISIBLE);
-        textDifficulty.setText(difficultyLabel(passage.difficulty));
-        textDifficulty.setBackgroundResource(difficultyBackground(passage.difficulty));
+        textDifficulty.setText(difficultyLabel(p.difficulty));
+        textDifficulty.setBackgroundResource(difficultyBackground(p.difficulty));
 
-        // Counter — show ★ when pool contains online passages
-        String counterText = (poolIndex + 1) + " / " + passagePool.size();
-        if (showingOnlinePassages) counterText += " ★";
         textCounter.setVisibility(View.VISIBLE);
-        textCounter.setText(counterText);
+        textCounter.setText((poolIndex + 1) + " / " + passagePool.size());
     }
 
     private void nextPassage() {
@@ -273,19 +199,17 @@ public class ReadingActivity extends AppCompatActivity {
         ObjectAnimator fadeOut = ObjectAnimator.ofFloat(cardPassage, "alpha", 1f, 0f);
         fadeOut.setDuration(160);
         fadeOut.addListener(new AnimatorListenerAdapter() {
-            @Override
-            public void onAnimationEnd(Animator animation) {
+            @Override public void onAnimationEnd(Animator animation) {
                 poolIndex = newIndex;
                 showCurrentPassage();
-                ObjectAnimator fadeIn = ObjectAnimator.ofFloat(cardPassage, "alpha", 0f, 1f);
-                fadeIn.setDuration(220);
-                fadeIn.start();
+                ObjectAnimator.ofFloat(cardPassage, "alpha", 0f, 1f)
+                        .setDuration(220).start();
             }
         });
         fadeOut.start();
     }
 
-    // ── Reveal / hide helpers ─────────────────────────────────────────────────
+    // ── Reveal helpers ────────────────────────────────────────────────────────
 
     private void toggleRomaji() {
         if (!romajiVisible) {
@@ -315,16 +239,15 @@ public class ReadingActivity extends AppCompatActivity {
         }
     }
 
-    private void revealView(View view) {
-        view.setAlpha(0f);
-        view.setVisibility(View.VISIBLE);
-        view.animate().alpha(1f).setDuration(250).start();
+    private void revealView(View v) {
+        v.setAlpha(0f);
+        v.setVisibility(View.VISIBLE);
+        v.animate().alpha(1f).setDuration(250).start();
     }
 
-    private void hideView(View view) {
-        view.animate().alpha(0f).setDuration(150)
-                .withEndAction(() -> view.setVisibility(View.GONE))
-                .start();
+    private void hideView(View v) {
+        v.animate().alpha(0f).setDuration(150)
+                .withEndAction(() -> v.setVisibility(View.GONE)).start();
     }
 
     // ── Helpers ───────────────────────────────────────────────────────────────

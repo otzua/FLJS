@@ -1,16 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- Application theme using Material Components -->
-    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <!-- Main app theme — DayNight automatically handles light/dark -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowBackground">@color/colorBackground</item>
-        <item name="android:statusBarColor">@color/colorBackground</item>
-        <item name="android:windowLightStatusBar">true</item>
-        <item name="android:navigationBarColor">@color/colorBackground</item>
-        <item name="android:windowLightNavigationBar">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
         <item name="android:fontFamily">sans-serif</item>
+        <!-- No global WindowAnimStyle: each activity calls overridePendingTransition
+             for the correct directional slide. A global fade here fights those calls
+             and makes every back/forward look wrong. -->
     </style>
 
     <!-- Preference theme -->

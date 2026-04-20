@@ -1,11 +1,11 @@
 package com.pikamander2.japanesequizz;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.widget.GridLayout;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -48,42 +48,29 @@ public class ChartActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        // Use XML layout — this ensures AppBarLayout handles fitsSystemWindows
+        // correctly and the toolbar never overlaps the notch/status bar.
+        setContentView(R.layout.activity_chart);
 
         int type = getIntent().getIntExtra(EXTRA_CHART_TYPE, TYPE_HIRAGANA);
         boolean isHiragana = (type == TYPE_HIRAGANA);
         String[][] data = isHiragana ? HIRAGANA : KATAKANA;
         String title = isHiragana ? "Hiragana Chart" : "Katakana Chart";
 
-        // Root layout
-        LinearLayout root = new LinearLayout(this);
-        root.setOrientation(LinearLayout.VERTICAL);
-        root.setBackgroundColor(0xFFF5F5F7);
-
-        // Toolbar
-        Toolbar toolbar = new Toolbar(this);
-        toolbar.setBackgroundColor(0xFFF5F5F7);
-        toolbar.setTitle(title);
-        toolbar.setTitleTextColor(0xFF1A1A2E);
-        LinearLayout.LayoutParams tbParams = new LinearLayout.LayoutParams(
-            LinearLayout.LayoutParams.MATCH_PARENT, getActionBarSize());
-        root.addView(toolbar, tbParams);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setTitle(title);
         }
 
-        // ScrollView
-        ScrollView scroll = new ScrollView(this);
-        LinearLayout.LayoutParams svParams = new LinearLayout.LayoutParams(
-            LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
-        scroll.setLayoutParams(svParams);
-
-        // Grid
-        GridLayout grid = new GridLayout(this);
+        GridLayout grid = findViewById(R.id.gridLayout);
         grid.setColumnCount(5);
-        int padding = dp(16);
-        grid.setPadding(padding, padding, padding, padding);
+
+        // Resolve theme colors so the chart respects dark/light mode
+        int colorBackground = getColor(R.color.colorSurface);
+        int colorOnBackground = resolveAttrColor(android.R.attr.textColorPrimary);
+        int colorSecondary = resolveAttrColor(android.R.attr.textColorSecondary);
 
         for (String[] pair : data) {
             String kana = pair[0];
@@ -92,7 +79,7 @@ public class ChartActivity extends AppCompatActivity {
             LinearLayout cell = new LinearLayout(this);
             cell.setOrientation(LinearLayout.VERTICAL);
             cell.setGravity(Gravity.CENTER);
-            int cellSize = dp(60);
+            int cellSize = dp(64);
             int cellMargin = dp(4);
             GridLayout.LayoutParams cellParams = new GridLayout.LayoutParams();
             cellParams.width = cellSize;
@@ -101,32 +88,34 @@ public class ChartActivity extends AppCompatActivity {
             cell.setLayoutParams(cellParams);
 
             if (!kana.isEmpty()) {
-                cell.setBackgroundColor(0xFFFFFFFF);
-                // rounded look via padding
+                cell.setBackgroundColor(colorBackground);
                 cell.setPadding(dp(4), dp(4), dp(4), dp(4));
 
                 TextView kanaView = new TextView(this);
                 kanaView.setText(kana);
                 kanaView.setTextSize(22);
-                kanaView.setTextColor(0xFF1A1A2E);
+                kanaView.setTextColor(colorOnBackground);
                 kanaView.setGravity(Gravity.CENTER);
                 cell.addView(kanaView);
 
                 TextView romajiView = new TextView(this);
                 romajiView.setText(romaji);
                 romajiView.setTextSize(10);
-                romajiView.setTextColor(0xFF9E9E9E);
+                romajiView.setTextColor(colorSecondary);
                 romajiView.setGravity(Gravity.CENTER);
                 cell.addView(romajiView);
             }
 
             grid.addView(cell);
         }
+    }
 
-        scroll.addView(grid);
-        root.addView(scroll);
-
-        setContentView(root);
+    private int resolveAttrColor(int attr) {
+        int[] attrs = new int[]{attr};
+        android.content.res.TypedArray ta = getTheme().obtainStyledAttributes(attrs);
+        int color = ta.getColor(0, 0xFF1A1A2E);
+        ta.recycle();
+        return color;
     }
 
     private int dp(int dp) {
@@ -134,20 +123,19 @@ public class ChartActivity extends AppCompatActivity {
         return Math.round(dp * density);
     }
 
-    private int getActionBarSize() {
-        int[] attrs = new int[]{android.R.attr.actionBarSize};
-        android.content.res.TypedArray ta = getTheme().obtainStyledAttributes(attrs);
-        int size = ta.getDimensionPixelSize(0, dp(56));
-        ta.recycle();
-        return size;
-    }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
             finish();
+            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
             return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
     }
 }

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Network Security Config
+    - Enforces HTTPS only (no plain HTTP cleartext traffic)
+    - Pins to well-known trusted CAs only
+    - Helps reduce false-positive security flags from banking apps like Paytm
+-->
+<network-security-config>
+
+    <!-- Default: HTTPS only, no cleartext allowed anywhere -->
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <!-- Trust system CA certificates only (no user-installed CAs) -->
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+
+    <!-- NHK Web Easy - the passage source -->
+    <domain-config cleartextTrafficPermitted="false">
+        <domain includeSubdomains="true">www3.nhk.or.jp</domain>
+        <domain includeSubdomains="true">nhk.or.jp</domain>
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </domain-config>
+
+    <!-- Aozora Bunko - public domain Japanese literature source -->
+    <domain-config cleartextTrafficPermitted="false">
+        <domain includeSubdomains="true">www.aozora.gr.jp</domain>
+        <domain includeSubdomains="true">aozora.gr.jp</domain>
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </domain-config>
+
+</network-security-config>
