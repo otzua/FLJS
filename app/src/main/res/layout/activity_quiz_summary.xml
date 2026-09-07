@@ -200,6 +200,19 @@
             app:cornerRadius="16dp" />
 
         <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnMistakeReview"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginTop="10dp"
+            android:text="Review Mistakes"
+            android:textColor="@color/colorOnPrimary"
+            android:textSize="15sp"
+            android:letterSpacing="0.02"
+            app:backgroundTint="@color/colorPrimary"
+            app:cornerRadius="16dp" />
+
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/buttonHome"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="match_parent"

@@ -1,0 +1,121 @@
+[
+  {
+    "level": "N5",
+    "pattern": "〜は〜です",
+    "meaning": "X is Y (topic marker)",
+    "category": "Basic Particle",
+    "examples": [
+      {
+        "japanese": "私は学生です。",
+        "furigana": "わたしはがくせいです。",
+        "translation": "I am a student."
+      },
+      {
+        "japanese": "これは本です。",
+        "furigana": "これはほんです。",
+        "translation": "This is a book."
+      }
+    ]
+  },
+  {
+    "level": "N5",
+    "pattern": "〜に/へ行く",
+    "meaning": "To go to a place",
+    "category": "Movement",
+    "examples": [
+      {
+        "japanese": "日本に行きます。",
+        "furigana": "にほんにいきます。",
+        "translation": "I will go to Japan."
+      },
+      {
+        "japanese": "学校へ行きます。",
+        "furigana": "がっこうへいきます。",
+        "translation": "I go to school."
+      }
+    ]
+  },
+  {
+    "level": "N5",
+    "pattern": "〜ませんか",
+    "meaning": "Won't you...? / Shall we...?",
+    "category": "Invitation",
+    "examples": [
+      {
+        "japanese": "一緒に食べませんか。",
+        "furigana": "いっしょにたべませんか。",
+        "translation": "Won't you eat with me?"
+      },
+      {
+        "japanese": "映画を見ませんか。",
+        "furigana": "えいがをみませんか。",
+        "translation": "Would you like to watch a movie?"
+      }
+    ]
+  },
+  {
+    "level": "N4",
+    "pattern": "〜てもいいですか",
+    "meaning": "May I do...? (Asking permission)",
+    "category": "Permission",
+    "examples": [
+      {
+        "japanese": "写真を撮ってもいいですか。",
+        "furigana": "しゃしんをとってもいいですか。",
+        "translation": "May I take a picture?"
+      }
+    ]
+  },
+  {
+    "level": "N4",
+    "pattern": "〜なければなりません",
+    "meaning": "Must do... / Have to...",
+    "category": "Obligation",
+    "examples": [
+      {
+        "japanese": "明日早く起きなければなりません。",
+        "furigana": "あしたはやくおきなければなりません。",
+        "translation": "I must wake up early tomorrow."
+      }
+    ]
+  },
+  {
+    "level": "N3",
+    "pattern": "〜うちに",
+    "meaning": "While... / Before...",
+    "category": "Time",
+    "examples": [
+      {
+        "japanese": "スープが温かいうちに飲んでください。",
+        "furigana": "スープがあたたかいうちにのんでください。",
+        "translation": "Please drink the soup while it's hot."
+      }
+    ]
+  },
+  {
+    "level": "N2",
+    "pattern": "〜に違いない",
+    "meaning": "Must be... / Without a doubt...",
+    "category": "Certainty",
+    "examples": [
+      {
+        "japanese": "彼が犯人に違いない。",
+        "furigana": "かれがはんにんにちがいない。",
+        "translation": "He must be the culprit."
+      }
+    ]
+  },
+  {
+    "level": "N1",
+    "pattern": "〜いかんだ",
+    "meaning": "Depending on...",
+    "category": "Condition",
+    "examples": [
+      {
+        "japanese": "結果は努力いかんだ。",
+        "furigana": "けっかはどりょくいかんだ。",
+        "translation": "The result depends on your effort."
+      }
+    ]
+  }
+]

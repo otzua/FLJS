@@ -13,3 +13,7 @@
 .externalNativeBuild
 .cxx
 local.properties
+app/build/
+.kotlin/
+*.apk
+*.log

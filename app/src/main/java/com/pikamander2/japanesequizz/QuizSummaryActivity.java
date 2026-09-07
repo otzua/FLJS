@@ -78,6 +78,14 @@ public class QuizSummaryActivity extends AppCompatActivity {
             finish();
         });
 
+        
+        android.widget.Button btnMistakeReview = findViewById(R.id.btnMistakeReview);
+        if (btnMistakeReview != null) {
+            btnMistakeReview.setOnClickListener(v -> {
+                startActivity(new android.content.Intent(this, com.pikamander2.japanesequizz.features.MistakeReviewActivity.class));
+            });
+        }
+
         buttonHome.setOnClickListener(v -> {
             Intent homeIntent = new Intent(this, MainActivity.class);
             homeIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);

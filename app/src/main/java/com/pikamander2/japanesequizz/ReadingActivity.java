@@ -117,7 +117,7 @@ public class ReadingActivity extends AppCompatActivity {
             // Jump to a random starting point for variety
             poolIndex = random.nextInt(passagePool.size());
             textFetchStatus.setVisibility(View.VISIBLE);
-            textFetchStatus.setText("✓ Showing " + passagePool.size() + " local passages");
+            textFetchStatus.setText("Showing " + passagePool.size() + " local passages");
             progressFetch.setVisibility(View.GONE);
             crossfadeToPassage(poolIndex);
         });

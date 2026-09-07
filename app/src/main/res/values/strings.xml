@@ -45,7 +45,7 @@
     <string name="btn_fetch_online">↺ Fetch Now</string>
     <string name="btn_fetching">Loading…</string>
     <string name="fetch_status_loading">Connecting to NHK Web Easy and Aozora Bunko…</string>
-    <string name="fetch_status_done">✓ Loaded %d new passages from the internet</string>
+    <string name="fetch_status_done">Loaded %d new passages from the internet</string>
     <string name="fetch_status_error">Could not connect — showing offline passages</string>
     <string name="no_passages_filter">No passages match this filter.</string>
     <string name="source_label">Source: %s</string>
@@ -75,6 +75,18 @@
         <item>20</item>
         <item>50</item>
         <item>100</item>
+    </string-array>
+
+
+    <string-array name="dark_mode_entries">
+        <item>System Default</item>
+        <item>Light</item>
+        <item>Dark</item>
+    </string-array>
+    <string-array name="dark_mode_values">
+        <item>system</item>
+        <item>light</item>
+        <item>dark</item>
     </string-array>
 
 </resources>

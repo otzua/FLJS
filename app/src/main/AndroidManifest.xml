@@ -70,6 +70,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.pikamander2.japanesequizz.MainActivity" />
         </activity>
+    
+        <activity android:name=".features.OnboardingActivity" android:exported="true" />
+        <activity android:name=".features.FlashcardActivity" android:exported="true" />
+        <activity android:name=".features.GrammarActivity" android:exported="true" />
+        <activity android:name=".features.MockTestActivity" android:exported="true" />
+        <activity android:name=".features.StatsActivity" android:exported="true" />
+        <activity android:name=".features.MistakeReviewActivity" android:exported="true" />
+        <receiver android:name=".features.NotificationReceiver" android:exported="true" />
+
     </application>
 
 </manifest>

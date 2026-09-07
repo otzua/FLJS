@@ -26,4 +26,18 @@
         android:positiveButtonText="@null"
         android:title="@string/pref_count_title" />
 
+
+    <ListPreference
+        android:defaultValue="system"
+        android:entries="@array/dark_mode_entries"
+        android:entryValues="@array/dark_mode_values"
+        android:key="theme_mode"
+        android:title="Dark Mode Override" />
+
+    <EditTextPreference
+        android:key="notification_time"
+        android:title="Daily Reminder Time (HH:MM)"
+        android:summary="Set time in 24h format (e.g. 20:00)"
+        android:defaultValue="20:00" />
+
 </PreferenceScreen>

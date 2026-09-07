@@ -10,6 +10,13 @@ import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
+import java.util.Calendar;
+import java.util.Date;
+import java.util.concurrent.TimeUnit;
+import android.widget.Button;
+import android.graphics.Color;
+
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.widget.Toolbar;
@@ -31,6 +38,14 @@ public class MainActivity extends AppCompatActivity {
         applyThemeFromPrefs();
 
         super.onCreate(savedInstanceState);
+        
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        if (!prefs.contains("user_name")) {
+            startActivity(new Intent(this, com.pikamander2.japanesequizz.features.OnboardingActivity.class));
+            finish();
+            return;
+        }
+
         setContentView(R.layout.activity_main);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -60,14 +75,20 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         updateStats();
+        updateJlptCountdown();
+        scheduleDailyNotification();
     }
 
     private void applyThemeFromPrefs() {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
-        boolean darkMode = prefs.getBoolean(PREF_DARK_MODE, false);
-        AppCompatDelegate.setDefaultNightMode(
-                darkMode ? AppCompatDelegate.MODE_NIGHT_YES
-                         : AppCompatDelegate.MODE_NIGHT_NO);
+        String theme = prefs.getString("theme_mode", "system");
+        if ("dark".equals(theme)) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+        } else if ("light".equals(theme)) {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+        } else {
+            AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
+        }
     }
 
     /** Staggered fade-up entrance animation for all cards */
@@ -76,7 +97,12 @@ public class MainActivity extends AppCompatActivity {
             R.id.textTitleJapanese,
             R.id.textTitleCharacters,
             R.id.textSubtitle,
+            R.id.cardJlptCountdown,
             R.id.layoutStats,
+            R.id.btnFlashcards,
+            R.id.btnGrammar,
+            R.id.btnMockTest,
+            R.id.btnStats,
             R.id.cardHiragana,
             R.id.cardKatakana,
             R.id.cardMixture,
@@ -102,6 +128,97 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    
+    private void updateJlptCountdown() {
+        TextView textDays = findViewById(R.id.textJlptCountdownDays);
+        TextView textLabel = findViewById(R.id.textJlptCountdownLabel);
+        if (textDays == null || textLabel == null) return;
+        
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        String level = prefs.getString("jlpt_level", "N5");
+        String name = prefs.getString("user_name", "");
+        String firstName = name.trim().isEmpty() ? "" : name.trim().split("\\s+")[0];
+        
+        textLabel.setText((firstName.isEmpty() ? "" : firstName + ", ") + "until next JLPT " + level);
+        
+        Calendar now = Calendar.getInstance();
+        
+        // Find next July or Dec
+        Calendar july = Calendar.getInstance();
+        july.set(Calendar.MONTH, Calendar.JULY);
+        july.set(Calendar.DAY_OF_MONTH, 1);
+        while (july.get(Calendar.DAY_OF_WEEK) != Calendar.SUNDAY) {
+            july.add(Calendar.DAY_OF_MONTH, 1);
+        }
+        if (july.before(now)) {
+            july.add(Calendar.YEAR, 1);
+            july.set(Calendar.MONTH, Calendar.JULY);
+            july.set(Calendar.DAY_OF_MONTH, 1);
+            while (july.get(Calendar.DAY_OF_WEEK) != Calendar.SUNDAY) {
+                july.add(Calendar.DAY_OF_MONTH, 1);
+            }
+        }
+        
+        Calendar dec = Calendar.getInstance();
+        dec.set(Calendar.MONTH, Calendar.DECEMBER);
+        dec.set(Calendar.DAY_OF_MONTH, 1);
+        while (dec.get(Calendar.DAY_OF_WEEK) != Calendar.SUNDAY) {
+            dec.add(Calendar.DAY_OF_MONTH, 1);
+        }
+        if (dec.before(now)) {
+            dec.add(Calendar.YEAR, 1);
+            dec.set(Calendar.MONTH, Calendar.DECEMBER);
+            dec.set(Calendar.DAY_OF_MONTH, 1);
+            while (dec.get(Calendar.DAY_OF_WEEK) != Calendar.SUNDAY) {
+                dec.add(Calendar.DAY_OF_MONTH, 1);
+            }
+        }
+        
+        Calendar nextExam = july.before(dec) ? july : dec;
+        long diff = nextExam.getTimeInMillis() - now.getTimeInMillis();
+        long days = TimeUnit.MILLISECONDS.toDays(diff);
+        
+        textDays.setText(days + " Days");
+        if (days <= 30) {
+            textDays.setTextColor(Color.RED);
+            findViewById(R.id.cardJlptCountdown).setBackgroundColor(Color.parseColor("#ffcccc"));
+        } else {
+            textDays.setTextColor(getResources().getColor(R.color.colorOnBackground));
+        }
+    }
+
+    
+    private void scheduleDailyNotification() {
+        android.app.AlarmManager alarmManager = (android.app.AlarmManager) getSystemService(android.content.Context.ALARM_SERVICE);
+        if (alarmManager == null) return;
+        
+        // Schedule every 4 hours during the day: 10:00, 14:00, 18:00, 22:00
+        int[] hours = {10, 14, 18, 22};
+        
+        for (int i = 0; i < hours.length; i++) {
+            Intent intent = new Intent(this, com.pikamander2.japanesequizz.features.NotificationReceiver.class);
+            android.app.PendingIntent pendingIntent = android.app.PendingIntent.getBroadcast(
+                this, i, intent, android.app.PendingIntent.FLAG_UPDATE_CURRENT | android.app.PendingIntent.FLAG_IMMUTABLE);
+                
+            java.util.Calendar calendar = java.util.Calendar.getInstance();
+            calendar.setTimeInMillis(System.currentTimeMillis());
+            calendar.set(java.util.Calendar.HOUR_OF_DAY, hours[i]);
+            calendar.set(java.util.Calendar.MINUTE, 0);
+            calendar.set(java.util.Calendar.SECOND, 0);
+            
+            if (calendar.getTimeInMillis() <= System.currentTimeMillis()) {
+                calendar.add(java.util.Calendar.DAY_OF_YEAR, 1);
+            }
+            
+            alarmManager.setRepeating(
+                android.app.AlarmManager.RTC_WAKEUP,
+                calendar.getTimeInMillis(),
+                android.app.AlarmManager.INTERVAL_DAY,
+                pendingIntent
+            );
+        }
+    }
+
     private void updateStats() {
         SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
         int bestStreak    = prefs.getInt("best_streak", 0);
@@ -111,6 +228,19 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupListeners() {
+
+        View btnFlashcards = findViewById(R.id.btnFlashcards);
+        if (btnFlashcards != null) btnFlashcards.setOnClickListener(v -> startActivity(new Intent(this, com.pikamander2.japanesequizz.features.FlashcardActivity.class)));
+        
+        View btnGrammar = findViewById(R.id.btnGrammar);
+        if (btnGrammar != null) btnGrammar.setOnClickListener(v -> startActivity(new Intent(this, com.pikamander2.japanesequizz.features.GrammarActivity.class)));
+        
+        View btnMockTest = findViewById(R.id.btnMockTest);
+        if (btnMockTest != null) btnMockTest.setOnClickListener(v -> startActivity(new Intent(this, com.pikamander2.japanesequizz.features.MockTestActivity.class)));
+        
+        View btnStats = findViewById(R.id.btnStats);
+        if (btnStats != null) btnStats.setOnClickListener(v -> startActivity(new Intent(this, com.pikamander2.japanesequizz.features.StatsActivity.class)));
+
         MaterialCardView cardHiragana = findViewById(R.id.cardHiragana);
         MaterialCardView cardKatakana = findViewById(R.id.cardKatakana);
         MaterialCardView cardMixture  = findViewById(R.id.cardMixture);
