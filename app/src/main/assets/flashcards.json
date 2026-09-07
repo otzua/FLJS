@@ -72,6 +72,114 @@
     "exampleTranslation": "I bought new shoes."
   },
   {
+    "id": "n5_9",
+    "level": "N5",
+    "word": "見る",
+    "reading": "みる",
+    "meaning": "to see / watch",
+    "exampleSentence": "テレビでニュースを見ます。",
+    "exampleTranslation": "I watch the news on TV."
+  },
+  {
+    "id": "n5_10",
+    "level": "N5",
+    "word": "聞く",
+    "reading": "きく",
+    "meaning": "to listen / hear / ask",
+    "exampleSentence": "音楽を聞くのが好きです。",
+    "exampleTranslation": "I like listening to music."
+  },
+  {
+    "id": "n5_11",
+    "level": "N5",
+    "word": "話す",
+    "reading": "はなす",
+    "meaning": "to speak / talk",
+    "exampleSentence": "日本語で話しましょう。",
+    "exampleTranslation": "Let's speak in Japanese."
+  },
+  {
+    "id": "n5_12",
+    "level": "N5",
+    "word": "書く",
+    "reading": "かく",
+    "meaning": "to write",
+    "exampleSentence": "手紙を書きました。",
+    "exampleTranslation": "I wrote a letter."
+  },
+  {
+    "id": "n5_13",
+    "level": "N5",
+    "word": "買う",
+    "reading": "かう",
+    "meaning": "to buy",
+    "exampleSentence": "スーパーでリンゴを買いました。",
+    "exampleTranslation": "I bought apples at the supermarket."
+  },
+  {
+    "id": "n5_14",
+    "level": "N5",
+    "word": "行く",
+    "reading": "いく",
+    "meaning": "to go",
+    "exampleSentence": "明日東京へ行きます。",
+    "exampleTranslation": "I will go to Tokyo tomorrow."
+  },
+  {
+    "id": "n5_15",
+    "level": "N5",
+    "word": "来る",
+    "reading": "くる",
+    "meaning": "to come",
+    "exampleSentence": "友達が家に遊びに来ました。",
+    "exampleTranslation": "A friend came over to my house to hang out."
+  },
+  {
+    "id": "n5_16",
+    "level": "N5",
+    "word": "車",
+    "reading": "くるま",
+    "meaning": "car",
+    "exampleSentence": "父は新しい車を運転します。",
+    "exampleTranslation": "My father drives a new car."
+  },
+  {
+    "id": "n5_17",
+    "level": "N5",
+    "word": "部屋",
+    "reading": "へや",
+    "meaning": "room",
+    "exampleSentence": "自分の部屋を掃除しました。",
+    "exampleTranslation": "I cleaned my room."
+  },
+  {
+    "id": "n5_18",
+    "level": "N5",
+    "word": "大きい",
+    "reading": "おおきい",
+    "meaning": "big / large",
+    "exampleSentence": "大きい犬が走っています。",
+    "exampleTranslation": "A big dog is running."
+  },
+  {
+    "id": "n5_19",
+    "level": "N5",
+    "word": "小さい",
+    "reading": "ちいさい",
+    "meaning": "small",
+    "exampleSentence": "この靴は少し小さいです。",
+    "exampleTranslation": "These shoes are a bit small."
+  },
+  {
+    "id": "n5_20",
+    "level": "N5",
+    "word": "高い",
+    "reading": "たかい",
+    "meaning": "expensive / tall",
+    "exampleSentence": "このカメラはとても高いです。",
+    "exampleTranslation": "This camera is very expensive."
+  },
+  {
     "id": "n4_1",
     "level": "N4",
     "word": "準備",
@@ -135,6 +243,78 @@
     "exampleTranslation": "I felt relieved after hearing from you."
   },
   {
+    "id": "n4_8",
+    "level": "N4",
+    "word": "習慣",
+    "reading": "しゅうかん",
+    "meaning": "habit / custom",
+    "exampleSentence": "早起きする習慣をつけたいです。",
+    "exampleTranslation": "I want to form the habit of waking up early."
+  },
+  {
+    "id": "n4_9",
+    "level": "N4",
+    "word": "連絡",
+    "reading": "れんらく",
+    "meaning": "contact / communication",
+    "exampleSentence": "着いたらすぐに連絡してください。",
+    "exampleTranslation": "Please contact me as soon as you arrive."
+  },
+  {
+    "id": "n4_10",
+    "level": "N4",
+    "word": "説明",
+    "reading": "せつめい",
+    "meaning": "explanation",
+    "exampleSentence": "先生の説明はわかりやすかったです。",
+    "exampleTranslation": "The teacher's explanation was easy to understand."
+  },
+  {
+    "id": "n4_11",
+    "level": "N4",
+    "word": "遠慮",
+    "reading": "えんりょ",
+    "meaning": "hesitation / holding back",
+    "exampleSentence": "遠慮しないで食べてください。",
+    "exampleTranslation": "Please eat without holding back."
+  },
+  {
+    "id": "n4_12",
+    "level": "N4",
+    "word": "故障",
+    "reading": "こしょう",
+    "meaning": "breakdown / out of order",
+    "exampleSentence": "エレベーターが故障しています。",
+    "exampleTranslation": "The elevator is out of order."
+  },
+  {
+    "id": "n4_13",
+    "level": "N4",
+    "word": "紹介",
+    "reading": "しょうかい",
+    "meaning": "introduction",
+    "exampleSentence": "友達を先生に紹介しました。",
+    "exampleTranslation": "I introduced my friend to the teacher."
+  },
+  {
+    "id": "n4_14",
+    "level": "N4",
+    "word": "予定",
+    "reading": "よてい",
+    "meaning": "schedule / plan",
+    "exampleSentence": "明日の予定を教えてください。",
+    "exampleTranslation": "Please tell me tomorrow's schedule."
+  },
+  {
+    "id": "n4_15",
+    "level": "N4",
+    "word": "反対",
+    "reading": "はんたい",
+    "meaning": "opposite / objection",
+    "exampleSentence": "彼の意見に反対です。",
+    "exampleTranslation": "I am opposed to his opinion."
+  },
+  {
     "id": "n3_1",
     "level": "N3",
     "word": "当然",
@@ -175,7 +355,7 @@
     "level": "N3",
     "word": "割合",
     "reading": "わりあい",
-    "meaning": "rate / ratio / relatively",
+    "meaning": "ratio / relatively",
     "exampleSentence": "今日は割合に涼しいですね。",
     "exampleTranslation": "It is relatively cool today, isn't it?"
   },
@@ -189,16 +369,61 @@
     "exampleTranslation": "What is the purpose of studying abroad?"
   },
   {
-    "id": "n2_1",
-    "level": "N2",
+    "id": "n3_7",
+    "level": "N3",
+    "word": "努力",
+    "reading": "どりょく",
+    "meaning": "effort / great endeavor",
+    "exampleSentence": "毎日の努力が実を結びました。",
+    "exampleTranslation": "Daily efforts bore fruit."
+  },
+  {
+    "id": "n3_8",
+    "level": "N3",
+    "word": "判断",
+    "reading": "はんだん",
+    "meaning": "judgment / decision",
+    "exampleSentence": "状況を見て冷静に判断しましょう。",
+    "exampleTranslation": "Let's observe the situation and judge calmly."
+  },
+  {
+    "id": "n3_9",
+    "level": "N3",
     "word": "影響",
     "reading": "えいきょう",
     "meaning": "influence / effect",
-    "exampleSentence": "台風が交通機関に影響を与えた。",
-    "exampleTranslation": "The typhoon affected public transportation."
+    "exampleSentence": "読書は子供の成長に良い影響を与えます。",
+    "exampleTranslation": "Reading has a positive influence on a child's growth."
   },
   {
-    "id": "n2_2",
+    "id": "n3_10",
+    "level": "N3",
+    "word": "関係",
+    "reading": "かんけい",
+    "meaning": "relationship / connection",
+    "exampleSentence": "彼とは良好な関係を保っています。",
+    "exampleTranslation": "I maintain a good relationship with him."
+  },
+  {
+    "id": "n3_11",
+    "level": "N3",
+    "word": "制限",
+    "reading": "せいげん",
+    "meaning": "restriction / limitation",
+    "exampleSentence": "利用時間には制限があります。",
+    "exampleTranslation": "There is a restriction on usage time."
+  },
+  {
+    "id": "n3_12",
+    "level": "N3",
+    "word": "責任",
+    "reading": "せきにん",
+    "meaning": "responsibility",
+    "exampleSentence": "自分の行動に責任を持ちなさい。",
+    "exampleTranslation": "Take responsibility for your own actions."
+  },
+  {
+    "id": "n2_1",
     "level": "N2",
     "word": "傾向",
     "reading": "けいこう",
@@ -207,7 +432,7 @@
     "exampleTranslation": "Prices tend to be rising."
   },
   {
-    "id": "n2_3",
+    "id": "n2_2",
     "level": "N2",
     "word": "把握",
     "reading": "はあく",
@@ -216,7 +441,7 @@
     "exampleTranslation": "It is necessary to accurately grasp the situation."
   },
   {
-    "id": "n2_4",
+    "id": "n2_3",
     "level": "N2",
     "word": "配慮",
     "reading": "はいりょ",
@@ -225,13 +450,49 @@
     "exampleTranslation": "You must not forget consideration for those around you."
   },
   {
-    "id": "n2_5",
+    "id": "n2_4",
     "level": "N2",
     "word": "克服",
     "reading": "こくふく",
     "meaning": "overcome / conquer",
     "exampleSentence": "困難を克服して成功を収めた。",
     "exampleTranslation": "He overcame difficulties and achieved success."
+  },
+  {
+    "id": "n2_5",
+    "level": "N2",
+    "word": "維持",
+    "reading": "いじ",
+    "meaning": "maintenance / preservation",
+    "exampleSentence": "健康を維持するために運動する。",
+    "exampleTranslation": "I exercise to maintain my health."
+  },
+  {
+    "id": "n2_6",
+    "level": "N2",
+    "word": "普及",
+    "reading": "ふきゅう",
+    "meaning": "spread / popularization",
+    "exampleSentence": "スマートフォンの普及が急速に進んだ。",
+    "exampleTranslation": "The spread of smartphones progressed rapidly."
+  },
+  {
+    "id": "n2_7",
+    "level": "N2",
+    "word": "慎重",
+    "reading": "しんちょう",
+    "meaning": "discreet / prudent / cautious",
+    "exampleSentence": "契約を結ぶ際は慎重に行動すべきだ。",
+    "exampleTranslation": "You should act cautiously when signing a contract."
+  },
+  {
+    "id": "n2_8",
+    "level": "N2",
+    "word": "柔軟",
+    "reading": "じゅうなん",
+    "meaning": "flexible / supple",
+    "exampleSentence": "柔軟な思考が求められています。",
+    "exampleTranslation": "Flexible thinking is required."
   },
   {
     "id": "n1_1",
@@ -277,5 +538,23 @@
     "meaning": "suggestion / implication",
     "exampleSentence": "実験結果は新たな可能性を示唆している。",
     "exampleTranslation": "The experimental results suggest new possibilities."
+  },
+  {
+    "id": "n1_6",
+    "level": "N1",
+    "word": "矛盾",
+    "reading": "むじゅん",
+    "meaning": "contradiction / inconsistency",
+    "exampleSentence": "彼の言動には明らかな矛盾がある。",
+    "exampleTranslation": "There is an obvious contradiction in his words and actions."
+  },
+  {
+    "id": "n1_7",
+    "level": "N1",
+    "word": "模索",
+    "reading": "もさく",
+    "meaning": "groping for / searching for a way",
+    "exampleSentence": "新しい解決策を模索している。",
+    "exampleTranslation": "We are exploring new solutions."
   }
 ]
