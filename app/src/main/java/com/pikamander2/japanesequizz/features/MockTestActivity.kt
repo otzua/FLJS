@@ -39,7 +39,7 @@ class MockTestActivity : ComponentActivity() {
                 Scaffold(
                     topBar = {
                         TopAppBar(
-                            title = { Text("PYQs & Textbooks") },
+                            title = { Text("PYQs & Practice Exams") },
                             navigationIcon = {
                                 TextButton(onClick = { finish() }) {
                                     Text("Back", fontWeight = FontWeight.Bold)
@@ -51,17 +51,32 @@ class MockTestActivity : ComponentActivity() {
                     Surface(modifier = Modifier.fillMaxSize().padding(padding)) {
                         Column(modifier = Modifier.padding(18.dp).verticalScroll(rememberScrollState())) {
                             
-                            // 1. Official JLPT PYQs Section
-                            Text("Official JLPT Previous Year Papers", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
-                            Spacer(modifier = Modifier.height(4.dp))
-                            Text(
-                                "Single-click downloads for official workbooks and past test compilations. (Note: The Japan Foundation officially publishes select full workbooks to maintain exam integrity).",
-                                style = MaterialTheme.typography.bodyMedium,
-                                color = MaterialTheme.colorScheme.onSurfaceVariant
-                            )
-                            Spacer(modifier = Modifier.height(12.dp))
+                            // 1. Notice / Important Information Banner
+                            Card(
+                                modifier = Modifier.fillMaxWidth(),
+                                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.secondaryContainer)
+                            ) {
+                                Column(modifier = Modifier.padding(14.dp)) {
+                                    Text(
+                                        "Note on Official JLPT Past Papers",
+                                        fontWeight = FontWeight.Bold,
+                                        fontSize = 15.sp,
+                                        color = MaterialTheme.colorScheme.onSecondaryContainer
+                                    )
+                                    Spacer(modifier = Modifier.height(6.dp))
+                                    Text(
+                                        "The Japan Foundation and JEES do not release past exam papers annually to protect test integrity. Only the official 2012 (Vol. 1) and 2018 (Vol. 2) practice workbooks exist as authentic full test papers. Use these two official workbooks below along with verified online mock exam banks (Bunpro, Mazii, Migii) for full exam preparation.",
+                                        style = MaterialTheme.typography.bodySmall,
+                                        color = MaterialTheme.colorScheme.onSecondaryContainer
+                                    )
+                                }
+                            }
+                            
+                            Spacer(modifier = Modifier.height(18.dp))
                             
                             // Level Filter Chips
+                            Text("Select Your Target Level:", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
+                            Spacer(modifier = Modifier.height(8.dp))
                             Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                                 levels.forEach { lvl ->
                                     FilterChip(
@@ -73,14 +88,14 @@ class MockTestActivity : ComponentActivity() {
                             }
                             Spacer(modifier = Modifier.height(14.dp))
                             
-                            // 2018 Official Exam
+                            // 2018 Official Exam (Vol. 2)
                             Card(
                                 modifier = Modifier.fillMaxWidth(),
                                 colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant)
                             ) {
                                 Column(modifier = Modifier.padding(14.dp)) {
-                                    Text("$selectedLevel - 2018 Official Practice Exam (Vol. 2)", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
-                                    Text("Complete full-length exam questions from actual recent JLPT administrations.", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                                    Text("$selectedLevel - 2018 Official Practice Workbook (Vol. 2)", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
+                                    Text("Authentic past exam question paper selected directly by the test creators.", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
                                     Spacer(modifier = Modifier.height(10.dp))
                                     Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                                         Button(
@@ -101,14 +116,14 @@ class MockTestActivity : ComponentActivity() {
                             
                             Spacer(modifier = Modifier.height(10.dp))
                             
-                            // 2012 Official Exam
+                            // 2012 Official Exam (Vol. 1)
                             Card(
                                 modifier = Modifier.fillMaxWidth(),
                                 colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant)
                             ) {
                                 Column(modifier = Modifier.padding(14.dp)) {
-                                    Text("$selectedLevel - 2012 Official Practice Exam (Vol. 1)", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
-                                    Text("Official foundational question paper set covering all sections.", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                                    Text("$selectedLevel - 2012 Official Practice Workbook (Vol. 1)", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
+                                    Text("Authentic foundational test workbook with full question sets and scoring keys.", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
                                     Spacer(modifier = Modifier.height(10.dp))
                                     Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                                         Button(
@@ -129,54 +144,111 @@ class MockTestActivity : ComponentActivity() {
                             
                             Spacer(modifier = Modifier.height(10.dp))
                             
-                            // Official Standard Specimen Paper
-                            Card(
-                                modifier = Modifier.fillMaxWidth(),
-                                colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.surfaceVariant)
+                            // Official Portal
+                            OutlinedButton(
+                                onClick = { openLink("https://www.jlpt.jp/e/samples/sampleindex.html") },
+                                modifier = Modifier.fillMaxWidth()
                             ) {
+                                Text("Open Official JLPT Sample Questions Portal")
+                            }
+                            
+                            HorizontalDivider(modifier = Modifier.padding(vertical = 20.dp))
+                            
+                            // 2. Verified Online Timed Mock Exams & Question Banks
+                            Text("Online Timed Mock Exams & Question Banks", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
+                            Spacer(modifier = Modifier.height(4.dp))
+                            Text(
+                                "Practice under realistic exam timing conditions with automated scoring and explanations.",
+                                style = MaterialTheme.typography.bodyMedium,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant
+                            )
+                            Spacer(modifier = Modifier.height(14.dp))
+                            
+                            Card(modifier = Modifier.fillMaxWidth().padding(bottom = 10.dp)) {
                                 Column(modifier = Modifier.padding(14.dp)) {
-                                    Text("$selectedLevel - Standard Specimen Exam Set", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
-                                    Text("Official benchmark question paper and scoring sheet.", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
-                                    Spacer(modifier = Modifier.height(10.dp))
-                                    Row(modifier = Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                                        Button(
-                                            onClick = { openLink("https://www.jlpt.jp/e/samples/pdf/${selectedLevel}-mondai.pdf") },
-                                            modifier = Modifier.weight(1f)
-                                        ) {
-                                            Text("Specimen Paper")
-                                        }
-                                        OutlinedButton(
-                                            onClick = { openLink("https://www.jlpt.jp/e/samples/pdf/${selectedLevel}-kaitou.pdf") },
-                                            modifier = Modifier.weight(1f)
-                                        ) {
-                                            Text("Scoring Sheet")
-                                        }
+                                    Text("Bunpro - 25 Full-Length JLPT Mock Exams", fontWeight = FontWeight.Bold, fontSize = 16.sp)
+                                    Text("Complete timed exams covering vocabulary, reading, and grammar for all levels N1 to N5.", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                                    Spacer(modifier = Modifier.height(8.dp))
+                                    FilledTonalButton(
+                                        onClick = { openLink("https://bunpro.jp/mock_tests") },
+                                        modifier = Modifier.fillMaxWidth()
+                                    ) {
+                                        Text("Open Bunpro Mock Tests")
                                     }
                                 }
                             }
                             
-                            Spacer(modifier = Modifier.height(12.dp))
-                            
-                            // More Multi-Year PYQs & Mock Hubs
-                            Text("More Practice Exams & Audio Archives", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.SemiBold)
-                            Spacer(modifier = Modifier.height(6.dp))
-                            FilledTonalButton(
-                                onClick = { openLink("https://jlptsensei.com/downloads/jlpt-practice-tests/") },
-                                modifier = Modifier.fillMaxWidth()
-                            ) {
-                                Text("JLPT Sensei Multi-Year Practice Test Vault")
-                            }
-                            Spacer(modifier = Modifier.height(6.dp))
-                            FilledTonalButton(
-                                onClick = { openLink("https://www.jlpt.jp/e/samples/sample12.html") },
-                                modifier = Modifier.fillMaxWidth()
-                            ) {
-                                Text("Official Audio Listening Files & Scripts")
+                            Card(modifier = Modifier.fillMaxWidth().padding(bottom = 10.dp)) {
+                                Column(modifier = Modifier.padding(14.dp)) {
+                                    Text("Mazii - Online Sample Tests (20+ Exams)", fontWeight = FontWeight.Bold, fontSize = 16.sp)
+                                    Text("Automated score calculation, Pass/Fail grading, and answer breakdowns for N1 through N5.", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                                    Spacer(modifier = Modifier.height(8.dp))
+                                    FilledTonalButton(
+                                        onClick = { openLink("https://mazii.net/en-US/jlpt-test") },
+                                        modifier = Modifier.fillMaxWidth()
+                                    ) {
+                                        Text("Open Mazii JLPT Test Bank")
+                                    }
+                                }
                             }
                             
-                            HorizontalDivider(modifier = Modifier.padding(vertical = 24.dp))
+                            Card(modifier = Modifier.fillMaxWidth().padding(bottom = 10.dp)) {
+                                Column(modifier = Modifier.padding(14.dp)) {
+                                    Text("Migii - Interactive Exam Bank", fontWeight = FontWeight.Bold, fontSize = 16.sp)
+                                    Text("Full mock test simulations with sectional scoring for language knowledge and reading.", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                                    Spacer(modifier = Modifier.height(8.dp))
+                                    FilledTonalButton(
+                                        onClick = { openLink("https://migii.net/en/jlpt-test") },
+                                        modifier = Modifier.fillMaxWidth()
+                                    ) {
+                                        Text("Open Migii Exam Bank")
+                                    }
+                                }
+                            }
                             
-                            // 2. Genki 3rd Edition Series (Google Drive)
+                            HorizontalDivider(modifier = Modifier.padding(vertical = 20.dp))
+                            
+                            // 3. Listening & Reading Practice
+                            Text("Listening & Graded Reading", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
+                            Spacer(modifier = Modifier.height(4.dp))
+                            Text(
+                                "Practice the listening section and build reading speed with real Japanese stories.",
+                                style = MaterialTheme.typography.bodyMedium,
+                                color = MaterialTheme.colorScheme.onSurfaceVariant
+                            )
+                            Spacer(modifier = Modifier.height(14.dp))
+                            
+                            Card(modifier = Modifier.fillMaxWidth().padding(bottom = 10.dp)) {
+                                Column(modifier = Modifier.padding(14.dp)) {
+                                    Text("The Nihongo Nook - Listening Exam Vault", fontWeight = FontWeight.Bold, fontSize = 16.sp)
+                                    Text("Over 100 authentic listening exam simulations with Japanese subtitles and full solutions.", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                                    Spacer(modifier = Modifier.height(8.dp))
+                                    Button(
+                                        onClick = { openLink("https://www.youtube.com/@TheNihongoNook") },
+                                        modifier = Modifier.fillMaxWidth()
+                                    ) {
+                                        Text("Open The Nihongo Nook Channel")
+                                    }
+                                }
+                            }
+                            
+                            Card(modifier = Modifier.fillMaxWidth().padding(bottom = 10.dp)) {
+                                Column(modifier = Modifier.padding(14.dp)) {
+                                    Text("Tadoku - Free Graded Japanese Books", fontWeight = FontWeight.Bold, fontSize = 16.sp)
+                                    Text("Free level-graded books designed for N5 and N4 learners to build reading comprehension.", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
+                                    Spacer(modifier = Modifier.height(8.dp))
+                                    FilledTonalButton(
+                                        onClick = { openLink("https://tadoku.org/japanese/en/free-books/") },
+                                        modifier = Modifier.fillMaxWidth()
+                                    ) {
+                                        Text("Open Free Tadoku Books")
+                                    }
+                                }
+                            }
+                            
+                            HorizontalDivider(modifier = Modifier.padding(vertical = 20.dp))
+                            
+                            // 4. Genki 3rd Edition Series (Google Drive)
                             Text("Genki (3rd Edition) Library", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
                             Spacer(modifier = Modifier.height(4.dp))
                             Text(
@@ -270,7 +342,7 @@ class MockTestActivity : ComponentActivity() {
                             
                             HorizontalDivider(modifier = Modifier.padding(vertical = 24.dp))
                             
-                            // 3. Minna no Nihongo Series
+                            // 5. Minna no Nihongo Series
                             Text("Minna no Nihongo Series", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
                             Spacer(modifier = Modifier.height(4.dp))
                             Text(
@@ -323,33 +395,6 @@ class MockTestActivity : ComponentActivity() {
                                         Text("Download English Grammar Guide II (PDF)")
                                     }
                                 }
-                            }
-                            
-                            HorizontalDivider(modifier = Modifier.padding(vertical = 24.dp))
-                            
-                            // 4. Interactive Practice
-                            Text("Interactive Study Resources", style = MaterialTheme.typography.titleLarge, fontWeight = FontWeight.Bold)
-                            Spacer(modifier = Modifier.height(4.dp))
-                            Text(
-                                "Web-based interactive drills and exercises aligned with textbook lessons.",
-                                style = MaterialTheme.typography.bodyMedium,
-                                color = MaterialTheme.colorScheme.onSurfaceVariant
-                            )
-                            Spacer(modifier = Modifier.height(12.dp))
-                            
-                            FilledTonalButton(
-                                onClick = { openLink("https://sethclydesdale.github.io/genki-study-resources/") },
-                                modifier = Modifier.fillMaxWidth()
-                            ) {
-                                Text("Seth Clydesdale's Genki Study Exercises")
-                            }
-                            Spacer(modifier = Modifier.height(8.dp))
-                            
-                            FilledTonalButton(
-                                onClick = { openLink("https://www.renshuu.org/") },
-                                modifier = Modifier.fillMaxWidth()
-                            ) {
-                                Text("Renshuu Interactive Japanese Practice")
                             }
                             
                             Spacer(modifier = Modifier.height(24.dp))
